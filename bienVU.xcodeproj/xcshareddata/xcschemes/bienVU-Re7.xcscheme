@@ -64,11 +64,20 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CD052AA41E7AED1E00571E6C"
+            BuildableName = "bienVU.app"
+            BlueprintName = "bienVU"
+            ReferencedContainer = "container:bienVU.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "CD052AA41E7AED1E00571E6C"
             BuildableName = "DansMaRue.app"
             BlueprintName = "DansMaRue"
             ReferencedContainer = "container:DansMaRue.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Staging"

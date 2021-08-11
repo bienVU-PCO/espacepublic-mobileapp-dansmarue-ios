@@ -63,7 +63,7 @@ class MapsUtils : NSObject {
     // Retourne le numero d'arrondissement
     open class func boroughLabel(postalCode: String) -> String {
         var boroughLabel = postalCode
-        if postalCode.hasPrefix(Constants.prefix75) {
+        if postalCode.hasPrefix(Constants.prefix93) {
             let cp = String(postalCode.suffix(2))
             if let cpint = Int(cp) {
                 boroughLabel = (cpint==1 ? "\(cpint) er" : "\(cpint) ème")
@@ -75,7 +75,7 @@ class MapsUtils : NSObject {
     
     
     open class func fullAddress() -> String {
-        if MapsUtils.postalCode.hasPrefix(Constants.prefix75) {
+        if MapsUtils.postalCode.hasPrefix(Constants.prefix93) {
             return "\(MapsUtils.addressLabel), \(MapsUtils.postalCode) PARIS"
         }
         return "\(MapsUtils.addressLabel), \(MapsUtils.postalCode) \(MapsUtils.locality)"

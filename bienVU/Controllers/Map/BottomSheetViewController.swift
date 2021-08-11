@@ -339,7 +339,7 @@ class BottomSheetViewController: UIViewController, UITextFieldDelegate {
         //Ajout d'une adresse aux favoris
         if(recognizer.addFavorite) {
             //Vérification si l'adresse est dans Paris
-            if MapsUtils.postalCode.hasPrefix(Constants.prefix75) {
+            if MapsUtils.postalCode.hasPrefix(Constants.prefix93) {
                 favorite.append(addressWithCoordonate)
             } else {
                 //Si hors de Paris, affichage d'une popup d'erreur
@@ -530,7 +530,7 @@ class BottomSheetViewController: UIViewController, UITextFieldDelegate {
     
     func displayAddAnomalyView() {
         // Outdoor : Si utilisateur connecté et en dehors de Paris, alors affiche message d'erreur
-        if Reach().connectionStatus() && !MapsUtils.postalCode.hasPrefix(Constants.prefix75) && ContextManager.shared.typeContribution == .outdoor {
+        if Reach().connectionStatus() && !MapsUtils.postalCode.hasPrefix(Constants.prefix93) && ContextManager.shared.typeContribution == .outdoor {
             let alertController = UIAlertController(title: Constants.AlertBoxTitle.adresseInvalide, message: Constants.AlertBoxMessage.adresseInvalide, preferredStyle: .alert)
             // Create OK button
             let OKAction = UIAlertAction(title: Constants.AlertBoxTitle.ok, style: .default) {
@@ -1069,7 +1069,7 @@ extension BottomSheetViewController: UITableViewDataSource {
             
             if let postalCode = myAddress.postalCode {
                 MapsUtils.postalCode = postalCode
-                MapsUtils.boroughLabel = MapsUtils.boroughLabel(postalCode: postalCode)
+                MapsUtils.boroughLabel = postalCode
                 geolocSubtitle.text = MapsUtils.boroughLabel
                 geolocSubtitle.isHidden = false
             }

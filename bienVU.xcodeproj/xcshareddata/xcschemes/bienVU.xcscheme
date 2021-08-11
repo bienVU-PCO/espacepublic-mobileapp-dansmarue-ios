@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0920"
+   LastUpgradeVersion = "1240"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CD052AA41E7AED1E00571E6C"
-               BuildableName = "DansMaRue.app"
-               BlueprintName = "DansMaRue"
-               ReferencedContainer = "container:DansMaRue.xcodeproj">
+               BuildableName = "bienVU.app"
+               BlueprintName = "bienVU"
+               ReferencedContainer = "container:bienVU.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -27,24 +27,15 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CD052AA41E7AED1E00571E6C"
-            BuildableName = "DansMaRue.app"
-            BlueprintName = "DansMaRue"
-            ReferencedContainer = "container:DansMaRue.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CD052AB81E7AED1F00571E6C"
-               BuildableName = "DansMaRueTests.xctest"
-               BlueprintName = "DansMaRueTests"
-               ReferencedContainer = "container:DansMaRue.xcodeproj">
+               BuildableName = "bienVUTests.xctest"
+               BlueprintName = "bienVUTests"
+               ReferencedContainer = "container:bienVU.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -64,14 +55,14 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CD052AA41E7AED1E00571E6C"
-            BuildableName = "DansMaRue.app"
-            BlueprintName = "DansMaRue"
-            ReferencedContainer = "container:DansMaRue.xcodeproj">
+            BuildableName = "bienVU.app"
+            BlueprintName = "bienVU"
+            ReferencedContainer = "container:bienVU.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "Release"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
@@ -81,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CD052AA41E7AED1E00571E6C"
-            BuildableName = "DansMaRue.app"
-            BlueprintName = "DansMaRue"
-            ReferencedContainer = "container:DansMaRue.xcodeproj">
+            BuildableName = "bienVU.app"
+            BlueprintName = "bienVU"
+            ReferencedContainer = "container:bienVU.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
@@ -91,7 +82,7 @@
       buildConfiguration = "Debug">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "Release"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

@@ -43,8 +43,11 @@ public class VersionsUtils: UIViewController {
                 if let jsonData = data {
                     let json:JSON = JSON(jsonData)
                     if let jsonDictionary = json.dictionary{
-                        if let answer = jsonDictionary["results"]?.array![0].dictionary {
-                            onCompletion(answer["version"]!, nil)
+                        var isValue = jsonDictionary["results"]?.array!.isEmpty
+                        if !isValue! {
+                            if let answer = jsonDictionary["results"]?.array![0].dictionary {
+                                onCompletion(answer["version"]!, nil)
+                            }
                         }
                     }
                 } else {

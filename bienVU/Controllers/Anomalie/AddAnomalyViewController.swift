@@ -136,9 +136,9 @@ class AddAnomalyViewController: UIViewController, UITextFieldDelegate, UIPickerV
     }
     
     @IBAction func publier(_ sender: UIButton_PublierAnomalie) {
-        
+         
         //On vérifie que l'adresse est bien dans paris avant la publication
-        if(!(currentAnomalie?.postalCode.hasPrefix(Constants.prefix75))!){
+        if(!(currentAnomalie?.postalCode.hasPrefix(Constants.prefix93))!){
             
             //message alerte
             let alertController = UIAlertController(title: Constants.AlertBoxTitle.adresseInvalide, message: Constants.AlertBoxMessage.adresseInvalide, preferredStyle: .alert)
@@ -595,7 +595,7 @@ extension AddAnomalyViewController: UITableViewDataSource {
                     let streetName = currentAnomalie?.streetName
                     let postalCode = currentAnomalie?.postalCode
                     addressLabel.text = streetName
-                    boroughLabel.text = MapsUtils.boroughLabel(postalCode: postalCode!)
+                    boroughLabel.text = postalCode
 
                 }
             } else if self.typeContribution == .indoor {

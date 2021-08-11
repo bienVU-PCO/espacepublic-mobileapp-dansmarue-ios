@@ -5,11 +5,11 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>fr_FR</string>
 	<key>CFBundleDisplayName</key>
-	<string>DansMaRue</string>
+	<string>bienVU</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.paris.signalement</string>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.4.7</string>
+	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -30,7 +30,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>179</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -62,6 +62,15 @@
 		<false/>
 		<key>NSExceptionDomains</key>
 		<dict>
+			<key>r59-srv.rec.apps.paris.mdp</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSTemporaryExceptionMinimumTLSVersion</key>
+				<string>TLSv1.1</string>
+			</dict>
 			<key>r59-tom01-dev.dev.acn</key>
 			<dict>
 				<key>NSIncludesSubdomains</key>
@@ -72,6 +81,15 @@
 				<string>TLSv1.1</string>
 			</dict>
 			<key>r59-tom01-rec.tmma.paris.mdp</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSTemporaryExceptionMinimumTLSVersion</key>
+				<string>TLSv1.1</string>
+			</dict>
+			<key>r60-srv.rec.apps.paris.mdp</key>
 			<dict>
 				<key>NSIncludesSubdomains</key>
 				<true/>
@@ -98,16 +116,7 @@
 				<key>NSTemporaryExceptionMinimumTLSVersion</key>
 				<string>TLSv1.1</string>
 			</dict>
-			<key>r59-srv.rec.apps.paris.mdp</key>
-			<dict>
-				<key>NSIncludesSubdomains</key>
-				<true/>
-				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
-				<true/>
-				<key>NSTemporaryExceptionMinimumTLSVersion</key>
-				<string>TLSv1.1</string>
-			</dict>
-			<key>r60-srv.rec.apps.paris.mdp</key>
+			<key>teleservices.paris.fr</key>
 			<dict>
 				<key>NSIncludesSubdomains</key>
 				<true/>
@@ -134,15 +143,6 @@
 				<key>NSTemporaryExceptionMinimumTLSVersion</key>
 				<string>TLSv1.1</string>
 			</dict>
-			<key>teleservices.paris.fr</key>
-			<dict>
-				<key>NSIncludesSubdomains</key>
-				<true/>
-				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
-				<true/>
-				<key>NSTemporaryExceptionMinimumTLSVersion</key>
-				<string>TLSv1.1</string>
-			</dict>
 			<key>v69.rec.apps.paris.fr</key>
 			<dict>
 				<key>NSIncludesSubdomains</key>
@@ -154,14 +154,14 @@
 			</dict>
 		</dict>
 	</dict>
-	<key>NSCameraUsageDescription</key>
-	<string>Vous permet de prendre des photos pour vos anomalies</string>
 	<key>NSBluetoothPeripheralUsageDescription</key>
 	<string>Vous permet de recevoir des notifications contextuelles via des balises bluetooth</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Vous permet de prendre des photos pour vos anomalies</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Vous permet de vous localiser pour créer une anomalie</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Vous permet d&apos;ajouter des photos à vos anomalies</string>
+	<string>Vous permet d'ajouter des photos à vos anomalies</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Montserrat-Bold.otf</string>
@@ -173,8 +173,6 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
-	<key>UIUserInterfaceStyle</key>
-	<string>Light</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
@@ -183,6 +181,8 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 </dict>

@@ -174,9 +174,9 @@
 		BCAA5B9EF47F2D99361C3992 /* Pods-DansMaRueTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DansMaRueTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DansMaRueTests/Pods-DansMaRueTests.release.xcconfig"; sourceTree = "<group>"; };
 		CD0508BA1E8124E90013334A /* UIDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIDevice.swift; path = Extensions/UIDevice.swift; sourceTree = "<group>"; };
 		CD0508BC1E826F030013334A /* AddAnomaly.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AddAnomaly.storyboard; path = Storyboards/Anomalie/AddAnomaly.storyboard; sourceTree = "<group>"; };
-		CD052AA51E7AED1F00571E6C /* DansMaRue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DansMaRue.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD052AA51E7AED1F00571E6C /* bienVU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bienVU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD052AAF1E7AED1F00571E6C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CD052AB91E7AED1F00571E6C /* DansMaRueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DansMaRueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD052AB91E7AED1F00571E6C /* bienVUTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bienVUTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD052ABD1E7AED1F00571E6C /* DansMaRueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DansMaRueTests.swift; sourceTree = "<group>"; };
 		CD052ABF1E7AED1F00571E6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD052ACC1E7AF68400571E6C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = SupportingFiles/AppDelegate.swift; sourceTree = "<group>"; };
@@ -375,8 +375,8 @@
 		CD052A9C1E7AED1E00571E6C = {
 			isa = PBXGroup;
 			children = (
-				CD052AA71E7AED1F00571E6C /* DansMaRue */,
-				CD052ABC1E7AED1F00571E6C /* DansMaRueTests */,
+				CD052AA71E7AED1F00571E6C /* bienVU */,
+				CD052ABC1E7AED1F00571E6C /* bienVUTests */,
 				CD052AA61E7AED1F00571E6C /* Products */,
 				BF5924E65EAC55368B9BF765 /* Pods */,
 				F301A058DCE46FEBA110893D /* Frameworks */,
@@ -388,13 +388,13 @@
 		CD052AA61E7AED1F00571E6C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CD052AA51E7AED1F00571E6C /* DansMaRue.app */,
-				CD052AB91E7AED1F00571E6C /* DansMaRueTests.xctest */,
+				CD052AA51E7AED1F00571E6C /* bienVU.app */,
+				CD052AB91E7AED1F00571E6C /* bienVUTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CD052AA71E7AED1F00571E6C /* DansMaRue */ = {
+		CD052AA71E7AED1F00571E6C /* bienVU */ = {
 			isa = PBXGroup;
 			children = (
 				916883BD247BBE36000D373E /* GoogleService-Info.plist */,
@@ -411,17 +411,17 @@
 				CD052ACB1E7AF65200571E6C /* SupportingFiles */,
 				CD052AC81E7AF5CF00571E6C /* Storyboards */,
 			);
-			path = DansMaRue;
+			path = bienVU;
 			sourceTree = "<group>";
 		};
-		CD052ABC1E7AED1F00571E6C /* DansMaRueTests */ = {
+		CD052ABC1E7AED1F00571E6C /* bienVUTests */ = {
 			isa = PBXGroup;
 			children = (
 				CD052ABD1E7AED1F00571E6C /* DansMaRueTests.swift */,
 				CD052ABF1E7AED1F00571E6C /* Info.plist */,
 				28538B76202B199D00C370BB /* MapUtilsTest.swift */,
 			);
-			path = DansMaRueTests;
+			path = bienVUTests;
 			sourceTree = "<group>";
 		};
 		CD052AC81E7AF5CF00571E6C /* Storyboards */ = {
@@ -511,9 +511,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CD052AA41E7AED1E00571E6C /* DansMaRue */ = {
+		CD052AA41E7AED1E00571E6C /* bienVU */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CD052AC21E7AED1F00571E6C /* Build configuration list for PBXNativeTarget "DansMaRue" */;
+			buildConfigurationList = CD052AC21E7AED1F00571E6C /* Build configuration list for PBXNativeTarget "bienVU" */;
 			buildPhases = (
 				EE594E599E9E4DF30818D416 /* [CP] Check Pods Manifest.lock */,
 				CD052AA11E7AED1E00571E6C /* Sources */,
@@ -527,14 +527,14 @@
 			);
 			dependencies = (
 			);
-			name = DansMaRue;
+			name = bienVU;
 			productName = DansMaRue;
-			productReference = CD052AA51E7AED1F00571E6C /* DansMaRue.app */;
+			productReference = CD052AA51E7AED1F00571E6C /* bienVU.app */;
 			productType = "com.apple.product-type.application";
 		};
-		CD052AB81E7AED1F00571E6C /* DansMaRueTests */ = {
+		CD052AB81E7AED1F00571E6C /* bienVUTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CD052AC51E7AED1F00571E6C /* Build configuration list for PBXNativeTarget "DansMaRueTests" */;
+			buildConfigurationList = CD052AC51E7AED1F00571E6C /* Build configuration list for PBXNativeTarget "bienVUTests" */;
 			buildPhases = (
 				5AEFD07159E4B4318B99685A /* [CP] Check Pods Manifest.lock */,
 				CD052AB51E7AED1F00571E6C /* Sources */,
@@ -546,9 +546,9 @@
 			dependencies = (
 				CD052ABB1E7AED1F00571E6C /* PBXTargetDependency */,
 			);
-			name = DansMaRueTests;
+			name = bienVUTests;
 			productName = DansMaRueTests;
-			productReference = CD052AB91E7AED1F00571E6C /* DansMaRueTests.xctest */;
+			productReference = CD052AB91E7AED1F00571E6C /* bienVUTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -581,7 +581,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CD052AA01E7AED1E00571E6C /* Build configuration list for PBXProject "DansMaRue" */;
+			buildConfigurationList = CD052AA01E7AED1E00571E6C /* Build configuration list for PBXProject "bienVU" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -595,8 +595,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CD052AA41E7AED1E00571E6C /* DansMaRue */,
-				CD052AB81E7AED1F00571E6C /* DansMaRueTests */,
+				CD052AA41E7AED1E00571E6C /* bienVU */,
+				CD052AB81E7AED1F00571E6C /* bienVUTests */,
 			);
 		};
 /* End PBXProject section */
@@ -835,7 +835,7 @@
 /* Begin PBXTargetDependency section */
 		CD052ABB1E7AED1F00571E6C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CD052AA41E7AED1E00571E6C /* DansMaRue */;
+			target = CD052AA41E7AED1E00571E6C /* bienVU */;
 			targetProxy = CD052ABA1E7AED1F00571E6C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -909,13 +909,14 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 168;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WTEMWM5569;
-				INFOPLIST_FILE = DansMaRue/SupportingFiles/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/bienVU/SupportingFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DENVIRONMENT_STAGING";
-				PRODUCT_BUNDLE_IDENTIFIER = com.paris.signalement;
+				PRODUCT_BUNDLE_IDENTIFIER = com.plainecommune.bienvu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "a8529573-15d0-4d2c-886d-524d953e8430";
 				PROVISIONING_PROFILE_SPECIFIER = DansMaRue_Dev;
@@ -936,7 +937,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.2;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DansMaRue.app/DansMaRue";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/bienVU.app/bienVU";
 			};
 			name = Staging;
 		};
@@ -1060,13 +1061,14 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 168;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WTEMWM5569;
-				INFOPLIST_FILE = DansMaRue/SupportingFiles/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/bienVU/SupportingFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DENVIRONMENT_DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = com.paris.signalement;
+				PRODUCT_BUNDLE_IDENTIFIER = com.plainecommune.bienvu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "a8529573-15d0-4d2c-886d-524d953e8430";
 				PROVISIONING_PROFILE_SPECIFIER = DansMaRue_Dev;
@@ -1084,13 +1086,15 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WTEMWM5569;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				INFOPLIST_FILE = DansMaRue/SupportingFiles/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/bienVU/SupportingFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DENVIRONMENT_RELEASE";
-				PRODUCT_BUNDLE_IDENTIFIER = com.paris.signalement;
+				PRODUCT_BUNDLE_IDENTIFIER = com.plainecommune.bienvu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "e143baa2-8a93-4844-8fd3-331e72330f17";
 				PROVISIONING_PROFILE_SPECIFIER = DansMaRue_Dist_v2;
@@ -1112,7 +1116,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.2;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DansMaRue.app/DansMaRue";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/bienVU.app/bienVU";
 			};
 			name = Debug;
 		};
@@ -1128,14 +1132,14 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.2;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DansMaRue.app/DansMaRue";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/bienVU.app/bienVU";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CD052AA01E7AED1E00571E6C /* Build configuration list for PBXProject "DansMaRue" */ = {
+		CD052AA01E7AED1E00571E6C /* Build configuration list for PBXProject "bienVU" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CD052AC01E7AED1F00571E6C /* Debug */,
@@ -1145,7 +1149,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CD052AC21E7AED1F00571E6C /* Build configuration list for PBXNativeTarget "DansMaRue" */ = {
+		CD052AC21E7AED1F00571E6C /* Build configuration list for PBXNativeTarget "bienVU" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CD052AC31E7AED1F00571E6C /* Debug */,
@@ -1155,7 +1159,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CD052AC51E7AED1F00571E6C /* Build configuration list for PBXNativeTarget "DansMaRueTests" */ = {
+		CD052AC51E7AED1F00571E6C /* Build configuration list for PBXNativeTarget "bienVUTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CD052AC61E7AED1F00571E6C /* Debug */,
