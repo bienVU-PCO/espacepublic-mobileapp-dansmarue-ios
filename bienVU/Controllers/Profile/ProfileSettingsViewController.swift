@@ -12,7 +12,7 @@ class ProfileSettingsViewController: UIViewController {
 
     //MARK: - Properties
 
-    let settingsArray = ["Profil", "Préférences", "Conditions générales d'utilisation", "À Propos"]
+    let settingsArray = [ "Préférences", "Conditions générales d'utilisation", "À Propos"]
 
     
     //MARK: - IBOutlets
@@ -106,7 +106,7 @@ extension ProfileSettingsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let profileStoryboard = UIStoryboard(name: Constants.StoryBoard.profile, bundle: nil)
         switch indexPath.row {
-        case 0:
+        /*case 0:
             if (User.shared.isLogged){
                 print("redirection vers page de profil")
                 let profileDetailVC = profileStoryboard.instantiateViewController(withIdentifier: Constants.ViewControllerIdentifier.profileDetail) as! ProfileDetailViewController
@@ -116,21 +116,21 @@ extension ProfileSettingsViewController: UITableViewDelegate {
             } else {
                 let compteParisienVC = UIStoryboard(name: Constants.StoryBoard.compteParisien, bundle: nil).instantiateViewController(withIdentifier: Constants.ViewControllerIdentifier.compteParisien)
                 self.navigationController?.present(compteParisienVC, animated: true)
-            }
+            }*/
            
-        case 1:
+        case 0:
            self.authorizationSettings()
             
 //            let profilePreferencesVC = profileStoryboard.instantiateViewController(withIdentifier: "ProfilePreferencesViewController") as! ProfilePreferencesViewController
 //            self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
 //            self.navigationController?.pushViewController(profilePreferencesVC, animated: true)
             
-        case 2:
+        case 1:
             let profileCGUVC = profileStoryboard.instantiateViewController(withIdentifier: Constants.ViewControllerIdentifier.profileCgu) as! ProfileCGUViewController
             
             self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
             self.navigationController?.pushViewController(profileCGUVC, animated: true)
-        case 3:
+        case 2:
             let profileAboutVC = profileStoryboard.instantiateViewController(withIdentifier: Constants.ViewControllerIdentifier.profileAbout) as! ProfileAboutViewController
             
             self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)

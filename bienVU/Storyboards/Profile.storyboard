@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lAq-Yu-K5C">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lAq-Yu-K5C">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -21,7 +21,7 @@
         <!--Profile View Controller-->
         <scene sceneID="fNq-ti-gv8">
             <objects>
-                <viewController id="b52-jO-lzy" customClass="ProfileViewController" customModule="DansMaRue" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="b52-jO-lzy" customClass="ProfileViewController" customModule="bienVU" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JIC-Sz-vZw"/>
                         <viewControllerLayoutGuide type="bottom" id="re9-yx-rGC"/>
@@ -55,14 +55,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="102" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_image" translatesAutoresizingMaskIntoConstraints="NO" id="p2f-9U-YmX">
-                                                    <rect key="frame" x="15" y="26" width="74" height="74"/>
+                                                    <rect key="frame" x="16" y="26" width="74" height="74"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="74" id="ALW-MJ-IC3"/>
                                                         <constraint firstAttribute="height" constant="74" id="gew-Qe-10m"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="103" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3p-tE-1az">
-                                                    <rect key="frame" x="97" y="36" width="208" height="35"/>
+                                                    <rect key="frame" x="98" y="36" width="206" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="35" id="JG1-LS-v8r"/>
                                                     </constraints>
@@ -71,19 +71,19 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Bu-Np-Fos">
-                                                    <rect key="frame" x="97" y="71" width="198" height="14.5"/>
+                                                    <rect key="frame" x="98" y="71" width="196" height="14.5"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.134521484375" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="106" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E1m-Tq-hbe">
-                                                    <rect key="frame" x="97" y="21" width="198" height="18"/>
+                                                    <rect key="frame" x="98" y="21" width="196" height="18"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="105" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCo-Pq-wQj">
-                                                    <rect key="frame" x="97" y="101" width="198" height="14.5"/>
+                                                    <rect key="frame" x="98" y="101" width="196" height="14.5"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="12"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -150,7 +150,7 @@
         <!--Paramètres-->
         <scene sceneID="Sjs-53-DIN">
             <objects>
-                <viewController title="Paramètres" automaticallyAdjustsScrollViewInsets="NO" id="PCa-Wa-Vue" customClass="ProfileSettingsViewController" customModule="DansMaRue" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Paramètres" automaticallyAdjustsScrollViewInsets="NO" id="PCa-Wa-Vue" customClass="ProfileSettingsViewController" customModule="bienVU" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KZM-9a-WGl"/>
                         <viewControllerLayoutGuide type="bottom" id="wtD-0l-0Qs"/>
@@ -171,7 +171,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aeT-Kk-x8a">
-                                                    <rect key="frame" x="15" y="11" width="290" height="26"/>
+                                                    <rect key="frame" x="16" y="11" width="288" height="26"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.054901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -191,7 +191,7 @@
                                     <outlet property="delegate" destination="PCa-Wa-Vue" id="B7J-gQ-7Fr"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kbk-Gq-hUJ">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kbk-Gq-hUJ">
                                 <rect key="frame" x="16" y="459" width="288" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="57" id="8Av-hT-V2T"/>
@@ -229,7 +229,7 @@
         <!--Préférences-->
         <scene sceneID="zIS-pP-SQ4">
             <objects>
-                <viewController storyboardIdentifier="ProfilePreferencesViewController" automaticallyAdjustsScrollViewInsets="NO" id="3Ru-J5-gUd" customClass="ProfilePreferencesViewController" customModule="DansMaRue" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfilePreferencesViewController" automaticallyAdjustsScrollViewInsets="NO" id="3Ru-J5-gUd" customClass="ProfilePreferencesViewController" customModule="bienVU" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sfp-Ys-LhA"/>
                         <viewControllerLayoutGuide type="bottom" id="0rS-bm-fJf"/>
@@ -250,13 +250,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Lorem ipsum" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RQn-FT-8r9">
-                                                    <rect key="frame" x="15" y="11" width="233" height="50"/>
+                                                    <rect key="frame" x="16" y="11" width="231" height="50"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" tag="102" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gli-TQ-3nz">
-                                                    <rect key="frame" x="256" y="20.5" width="51" height="31"/>
+                                                    <rect key="frame" x="255" y="20.5" width="51" height="31"/>
                                                     <color key="onTintColor" red="0.87450980389999999" green="0.1333333333" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </switch>
                                             </subviews>
@@ -299,7 +299,7 @@
         <!--ProfileCGU View Controller-->
         <scene sceneID="Dur-bl-3c1">
             <objects>
-                <viewController storyboardIdentifier="ProfileCGUViewController" id="Hzy-HU-NSj" customClass="ProfileCGUViewController" customModule="DansMaRue" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileCGUViewController" id="Hzy-HU-NSj" customClass="ProfileCGUViewController" customModule="bienVU" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LsP-UV-BKw"/>
                         <viewControllerLayoutGuide type="bottom" id="9IB-nL-y3A"/>
@@ -335,7 +335,7 @@
         <!--Profile Detail View Controller-->
         <scene sceneID="X3A-u6-R6v">
             <objects>
-                <viewController storyboardIdentifier="ProfileDetailViewController" id="fv3-zI-b03" customClass="ProfileDetailViewController" customModule="DansMaRue" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileDetailViewController" id="fv3-zI-b03" customClass="ProfileDetailViewController" customModule="bienVU" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="V1B-yq-rPv"/>
                         <viewControllerLayoutGuide type="bottom" id="XHw-xv-iA6"/>
@@ -374,7 +374,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H4e-Sz-usB">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H4e-Sz-usB">
                                 <rect key="frame" x="26" y="242" width="84" height="30"/>
                                 <state key="normal" title="displayProfil"/>
                                 <connections>
@@ -420,7 +420,7 @@
         <!--Profile About View Controller-->
         <scene sceneID="zra-oU-Wkk">
             <objects>
-                <viewController storyboardIdentifier="ProfileAboutViewController" id="443-79-YPF" customClass="ProfileAboutViewController" customModule="DansMaRue" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileAboutViewController" id="443-79-YPF" customClass="ProfileAboutViewController" customModule="bienVU" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UYU-3z-DkF"/>
                         <viewControllerLayoutGuide type="bottom" id="Afz-NR-fSr"/>
