@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import DansMaRue
+@testable import bienVU
 
 class MapUtilsTest: XCTestCase {
     
