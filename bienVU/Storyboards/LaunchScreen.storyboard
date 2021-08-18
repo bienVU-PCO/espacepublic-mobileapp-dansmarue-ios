@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,42 +23,24 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_dansMaRue" translatesAutoresizingMaskIntoConstraints="NO" id="bfI-RC-ly1">
-                                <rect key="frame" x="84" y="117" width="247" height="257"/>
+                                <rect key="frame" x="84" y="303" width="247" height="257"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="bfI-RC-ly1" secondAttribute="height" multiplier="247:257" id="IRT-Wq-XWb"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo vert 16112018.png" translatesAutoresizingMaskIntoConstraints="NO" id="2p3-NF-FQN">
-                                <rect key="frame" x="297.5" y="744" width="87.5" height="87"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="87" id="Fgy-8Z-omb"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ramen_mobile.png" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wCI-Hf-U9g">
-                                <rect key="frame" x="92" y="631" width="230" height="74"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="74" id="56M-ve-h2X"/>
-                                    <constraint firstAttribute="width" constant="230" id="z6b-BS-tdF"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="2p3-NF-FQN" firstAttribute="leading" secondItem="wCI-Hf-U9g" secondAttribute="trailing" constant="-24.5" id="57K-Op-NOA"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="2p3-NF-FQN" secondAttribute="bottom" constant="31" id="EO6-mj-n7T"/>
                             <constraint firstItem="EI7-uX-hjm" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top" id="FSM-je-tNn"/>
                             <constraint firstItem="EI7-uX-hjm" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="HnU-om-UOC"/>
                             <constraint firstItem="bfI-RC-ly1" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="64" id="I6i-vB-qkV"/>
                             <constraint firstItem="EI7-uX-hjm" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Kdp-ca-sgH"/>
                             <constraint firstItem="EI7-uX-hjm" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Mam-or-Lhc"/>
                             <constraint firstItem="EI7-uX-hjm" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="O43-nY-QzE"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="wCI-Hf-U9g" secondAttribute="bottom" constant="157" id="OSD-Tf-XrT"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="2p3-NF-FQN" secondAttribute="trailing" constant="9" id="P8P-IX-MNO"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="EI7-uX-hjm" secondAttribute="bottom" id="TqQ-Jg-FPq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bfI-RC-ly1" secondAttribute="trailing" constant="63" id="ibv-0y-zmO"/>
-                            <constraint firstItem="EI7-uX-hjm" firstAttribute="centerX" secondItem="wCI-Hf-U9g" secondAttribute="centerX" id="tgj-wE-0he"/>
                             <constraint firstAttribute="trailing" secondItem="EI7-uX-hjm" secondAttribute="trailing" id="uEZ-Sy-1aC"/>
-                            <constraint firstItem="bfI-RC-ly1" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="73" id="yUW-hg-JrM"/>
+                            <constraint firstItem="bfI-RC-ly1" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="259" id="yUW-hg-JrM"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -70,9 +50,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="launchImage" width="180" height="320"/>
-        <image name="logo vert 16112018.png" width="2076" height="2206"/>
-        <image name="logo_dansMaRue" width="171" height="186"/>
-        <image name="ramen_mobile.png" width="203" height="67"/>
+        <image name="launchImage" width="180.5" height="320.5"/>
+        <image name="logo_dansMaRue" width="171.5" height="186"/>
     </resources>
 </document>

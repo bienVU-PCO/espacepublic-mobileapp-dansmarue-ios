@@ -12,11 +12,11 @@ import UIKit
 extension UIColor {
 
     class func pinkButtonDmr() -> UIColor {
-        return UIColor(red: 223.0/255.0, green: 34.0/255.0, blue: 90.0/255.0, alpha: 1.0)
+        return UIColor(red: 250.0/255.0, green: 27.0/255.0, blue: 56.0/255.0, alpha: 1.0)
     }
     
     class func pinkDmr() -> UIColor {
-        return UIColor(red: 223.0/255.0, green: 34.0/255.0, blue: 90.0/255.0, alpha: 1.0)
+        return UIColor(red: 250.0/255.0, green: 27.0/255.0, blue: 56.0/255.0, alpha: 1.0)
     }
     
     class func lightGreyDmr() -> UIColor {

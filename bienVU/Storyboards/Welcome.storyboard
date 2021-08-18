@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="etL-It-PFe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="etL-It-PFe">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -18,7 +18,7 @@
         <!--Welcome View Controller-->
         <scene sceneID="Ur9-nZ-lSW">
             <objects>
-                <viewController storyboardIdentifier="WelcomeViewController" id="etL-It-PFe" customClass="WelcomeViewController" customModule="DansMaRue" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeViewController" id="etL-It-PFe" customClass="WelcomeViewController" customModule="bienVU" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8kb-Xr-8EK"/>
                         <viewControllerLayoutGuide type="bottom" id="lPP-E7-zSy"/>
@@ -38,9 +38,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nnQ-7E-iri">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="587"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tiX-sa-VpZ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tiX-sa-VpZ">
                                 <rect key="frame" x="23" y="595" width="328" height="49"/>
-                                <color key="backgroundColor" red="0.87450980389999999" green="0.1333333333" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.98039215686274506" green="0.10588235294117647" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="shD-SI-bch"/>
                                 </constraints>
@@ -84,7 +84,7 @@
         <!--Welcome Page Content View Controller-->
         <scene sceneID="nVB-2S-r9A">
             <objects>
-                <pageViewController storyboardIdentifier="WelcomePageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="FhF-SE-o1w" customClass="WelcomePageContentViewController" customModule="DansMaRue" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="WelcomePageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="FhF-SE-o1w" customClass="WelcomePageContentViewController" customModule="bienVU" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pwU-lp-hHf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4088.8000000000002" y="-44.527736131934034"/>
@@ -92,7 +92,7 @@
         <!--Welcome Slider View Controller-->
         <scene sceneID="tV5-C7-Ojo">
             <objects>
-                <viewController storyboardIdentifier="WelcomeSliderViewController" id="Urz-sZ-yZM" customClass="WelcomeSliderViewController" customModule="DansMaRue" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeSliderViewController" id="Urz-sZ-yZM" customClass="WelcomeSliderViewController" customModule="bienVU" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PSn-ov-uyG"/>
                         <viewControllerLayoutGuide type="bottom" id="hA1-t1-KNf"/>
