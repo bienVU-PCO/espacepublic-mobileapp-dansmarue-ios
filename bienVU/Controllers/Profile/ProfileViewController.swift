@@ -39,8 +39,14 @@ class ProfileViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        // A supprimer lorsqu'une alternative à monparis sera en place
+        malfunctionTypeSegmentedControl.removeSegment(at: 2, animated: false)
+        malfunctionTypeSegmentedControl.removeSegment(at: 1, animated: false)
+        
         self.navigationItem.title = ""
-        if User.shared.isLogged {
+        
+        // A décommenter lorsqu'une alternative à monparis sera en place
+        /*if User.shared.isLogged {
             if let firstName = User.shared.firstName, let lastName = User.shared.lastName {
                 self.navigationItem.title = "\(firstName) \(lastName)"
             }
@@ -53,7 +59,7 @@ class ProfileViewController: UIViewController {
             isPremierAffichageFormConnexion=false
             let compteParisienVC = UIStoryboard(name: Constants.StoryBoard.compteParisien, bundle: nil).instantiateViewController(withIdentifier: Constants.ViewControllerIdentifier.compteParisien)
             self.navigationController?.present(compteParisienVC, animated: true)
-        }
+        }*/
         
         self.malfunctionDraftArray = [Anomalie] (AnomalieBrouillon.shared.anomalies.values)
         self.malfunctionDraftArray.sort(by: { $0.dateHour.compare($1.dateHour) == .orderedDescending })
