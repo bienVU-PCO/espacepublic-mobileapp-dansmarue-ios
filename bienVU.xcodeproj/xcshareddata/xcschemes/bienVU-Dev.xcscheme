@@ -42,9 +42,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CD052AB81E7AED1F00571E6C"
-               BuildableName = "DansMaRueTests.xctest"
-               BlueprintName = "DansMaRueTests"
-               ReferencedContainer = "container:DansMaRue.xcodeproj">
+               BuildableName = "bienVUTests.xctest"
+               BlueprintName = "bienVUTests"
+               ReferencedContainer = "container:bienVU.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>

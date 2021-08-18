@@ -75,9 +75,6 @@ class MapsUtils : NSObject {
     
     
     open class func fullAddress() -> String {
-        if MapsUtils.postalCode.hasPrefix(Constants.prefix93) {
-            return "\(MapsUtils.addressLabel), \(MapsUtils.postalCode) PARIS"
-        }
         return "\(MapsUtils.addressLabel), \(MapsUtils.postalCode) \(MapsUtils.locality)"
     }
     
@@ -88,7 +85,7 @@ class MapsUtils : NSObject {
     open class func getStreetAddress(address: String) -> String {
         
         let address = address
-        let regexp = "75[0-9][0-9][0-9]"
+        let regexp = "93[0-9][0-9][0-9]"
         if let range = address.range(of:regexp, options: .regularExpression) {
             let rue = address.substring(to:range.lowerBound)
             return rue
@@ -102,7 +99,7 @@ class MapsUtils : NSObject {
     open class func getPostalCode(address: String) -> String {
         
         let address = address
-        let regexp = "75[0-9][0-9][0-9]"
+        let regexp = "93[0-9][0-9][0-9]"
         if let range = address.range(of:regexp, options: .regularExpression) {
             let cp = address.substring(with:range)
             return cp

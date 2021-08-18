@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B8F0359E01002336D7904B7 /* Pods_bienVU.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC543B430F4F9584A1FC3FF /* Pods_bienVU.framework */; };
 		2814F5CE1EC1FFAE00156DFE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2814F5CD1EC1FFAE00156DFE /* User.swift */; };
 		2814F5D21EC9CC8E00156DFE /* ProfileDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2814F5D11EC9CC8E00156DFE /* ProfileDetailViewController.swift */; };
 		2830EFF62034697A008E6B18 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2830EFF52034697A008E6B18 /* BottomSheetView.swift */; };
@@ -50,7 +51,7 @@
 		28FE2C7D1FA8B57200C86D4D /* getEquipementsOne.json in Resources */ = {isa = PBXBuildFile; fileRef = 28FE2C7C1FA8B57200C86D4D /* getEquipementsOne.json */; };
 		4822FD7C2050184200184932 /* MyNotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4822FD7B2050184200184932 /* MyNotificationDelegate.swift */; };
 		48BA5DF7203DC26C004F9490 /* VersionsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BA5DF6203DC26B004F9490 /* VersionsUtils.swift */; };
-		6AAF02BD22CB05E198086FA0 /* Pods_DansMaRueTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E014747F2A8DEF09932FFEC /* Pods_DansMaRueTests.framework */; };
+		837D2875F3AAC104FCBB5C39 /* Pods_bienVUTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B905C83CC98D38B5C2C9F40 /* Pods_bienVUTests.framework */; };
 		910172CF2302F12A00892887 /* ManageFavorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 910172CE2302F12A00892887 /* ManageFavorites.storyboard */; };
 		910172D12302F26300892887 /* ManageFavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910172D02302F26300892887 /* ManageFavoritesViewController.swift */; };
 		910172D323030FBE00892887 /* TypeFavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910172D223030FBE00892887 /* TypeFavoritesTableViewCell.swift */; };
@@ -61,7 +62,6 @@
 		919023BF2343846900A0E8E2 /* MessageTypeAnoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919023BE2343846900A0E8E2 /* MessageTypeAnoViewController.swift */; };
 		919C629E21ECBE9800FC9C61 /* logo vert 16112018.png in Resources */ = {isa = PBXBuildFile; fileRef = 919C629D21ECBE9800FC9C61 /* logo vert 16112018.png */; };
 		919C62A021ECBEBA00FC9C61 /* ramen_mobile.png in Resources */ = {isa = PBXBuildFile; fileRef = 919C629F21ECBEBA00FC9C61 /* ramen_mobile.png */; };
-		9CE533E17D9B18486A08A7A6 /* Pods_DansMaRue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8980F8BE717E1116B830107E /* Pods_DansMaRue.framework */; };
 		CD0508BB1E8124E90013334A /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0508BA1E8124E90013334A /* UIDevice.swift */; };
 		CD0508BD1E826F030013334A /* AddAnomaly.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD0508BC1E826F030013334A /* AddAnomaly.storyboard */; };
 		CD052AB01E7AED1F00571E6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD052AAF1E7AED1F00571E6C /* Assets.xcassets */; };
@@ -110,6 +110,7 @@
 
 /* Begin PBXFileReference section */
 		0A6B345BE2531A9036AC9BDF /* Pods-DansMaRueTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DansMaRueTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DansMaRueTests/Pods-DansMaRueTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1F3FE6477F6CCC276F9CC4A9 /* Pods-bienVU.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bienVU.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bienVU/Pods-bienVU.debug.xcconfig"; sourceTree = "<group>"; };
 		2814F5CD1EC1FFAE00156DFE /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Model/User.swift; sourceTree = "<group>"; };
 		2814F5D11EC9CC8E00156DFE /* ProfileDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileDetailViewController.swift; path = Controllers/Profile/ProfileDetailViewController.swift; sourceTree = "<group>"; };
 		2830EFF52034697A008E6B18 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BottomSheetView.swift; path = Controllers/Map/BottomSheetView.swift; sourceTree = "<group>"; };
@@ -155,11 +156,14 @@
 		28FE2C7C1FA8B57200C86D4D /* getEquipementsOne.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = getEquipementsOne.json; path = Services/getEquipementsOne.json; sourceTree = "<group>"; };
 		4822FD7B2050184200184932 /* MyNotificationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNotificationDelegate.swift; sourceTree = "<group>"; };
 		48BA5DF6203DC26B004F9490 /* VersionsUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VersionsUtils.swift; path = Utils/VersionsUtils.swift; sourceTree = "<group>"; };
+		4B905C83CC98D38B5C2C9F40 /* Pods_bienVUTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bienVUTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D0E6427873BDC408B820D63 /* Pods-DansMaRue.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DansMaRue.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DansMaRue/Pods-DansMaRue.debug.xcconfig"; sourceTree = "<group>"; };
+		51D295BE4B891B6BA15428E4 /* Pods-bienVUTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bienVUTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-bienVUTests/Pods-bienVUTests.release.xcconfig"; sourceTree = "<group>"; };
+		53A97D6204B7F4583D6D6E1B /* Pods-bienVUTests.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bienVUTests.staging.xcconfig"; path = "Pods/Target Support Files/Pods-bienVUTests/Pods-bienVUTests.staging.xcconfig"; sourceTree = "<group>"; };
+		587C948A346C1E57D72C9E8E /* Pods-bienVUTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bienVUTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bienVUTests/Pods-bienVUTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5A59C084EB229C729ABB8B8B /* Pods-DansMaRueTests.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DansMaRueTests.staging.xcconfig"; path = "Pods/Target Support Files/Pods-DansMaRueTests/Pods-DansMaRueTests.staging.xcconfig"; sourceTree = "<group>"; };
-		5E014747F2A8DEF09932FFEC /* Pods_DansMaRueTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DansMaRueTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BC543B430F4F9584A1FC3FF /* Pods_bienVU.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bienVU.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C4ECCEB5272A1BB61F05431 /* Pods-DansMaRue.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DansMaRue.release.xcconfig"; path = "Pods/Target Support Files/Pods-DansMaRue/Pods-DansMaRue.release.xcconfig"; sourceTree = "<group>"; };
-		8980F8BE717E1116B830107E /* Pods_DansMaRue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DansMaRue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F84B15D8DBA2950D5A2756D /* Pods-DansMaRue.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DansMaRue.staging.xcconfig"; path = "Pods/Target Support Files/Pods-DansMaRue/Pods-DansMaRue.staging.xcconfig"; sourceTree = "<group>"; };
 		910172CE2302F12A00892887 /* ManageFavorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ManageFavorites.storyboard; sourceTree = "<group>"; };
 		910172D02302F26300892887 /* ManageFavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageFavoritesViewController.swift; sourceTree = "<group>"; };
@@ -210,6 +214,8 @@
 		E7E5AAC11EA0F0E500BD2608 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = Controllers/Profile/ProfileViewController.swift; sourceTree = "<group>"; };
 		E7E5AAC31EA0FB2100BD2608 /* ProfileSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileSettingsViewController.swift; path = Controllers/Profile/ProfileSettingsViewController.swift; sourceTree = "<group>"; };
 		E7E5AAC51EA0FDDC00BD2608 /* ProfilePreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfilePreferencesViewController.swift; path = Controllers/Profile/ProfilePreferencesViewController.swift; sourceTree = "<group>"; };
+		EDFC861527E887435FA9CC5D /* Pods-bienVU.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bienVU.release.xcconfig"; path = "Pods/Target Support Files/Pods-bienVU/Pods-bienVU.release.xcconfig"; sourceTree = "<group>"; };
+		EE39ABBCEA6CF31460F3EA1F /* Pods-bienVU.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bienVU.staging.xcconfig"; path = "Pods/Target Support Files/Pods-bienVU/Pods-bienVU.staging.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,7 +223,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CE533E17D9B18486A08A7A6 /* Pods_DansMaRue.framework in Frameworks */,
+				0B8F0359E01002336D7904B7 /* Pods_bienVU.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,7 +231,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6AAF02BD22CB05E198086FA0 /* Pods_DansMaRueTests.framework in Frameworks */,
+				837D2875F3AAC104FCBB5C39 /* Pods_bienVUTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +362,12 @@
 				BCAA5B9EF47F2D99361C3992 /* Pods-DansMaRueTests.release.xcconfig */,
 				8F84B15D8DBA2950D5A2756D /* Pods-DansMaRue.staging.xcconfig */,
 				5A59C084EB229C729ABB8B8B /* Pods-DansMaRueTests.staging.xcconfig */,
+				1F3FE6477F6CCC276F9CC4A9 /* Pods-bienVU.debug.xcconfig */,
+				EE39ABBCEA6CF31460F3EA1F /* Pods-bienVU.staging.xcconfig */,
+				EDFC861527E887435FA9CC5D /* Pods-bienVU.release.xcconfig */,
+				587C948A346C1E57D72C9E8E /* Pods-bienVUTests.debug.xcconfig */,
+				53A97D6204B7F4583D6D6E1B /* Pods-bienVUTests.staging.xcconfig */,
+				51D295BE4B891B6BA15428E4 /* Pods-bienVUTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -502,8 +514,8 @@
 		F301A058DCE46FEBA110893D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8980F8BE717E1116B830107E /* Pods_DansMaRue.framework */,
-				5E014747F2A8DEF09932FFEC /* Pods_DansMaRueTests.framework */,
+				5BC543B430F4F9584A1FC3FF /* Pods_bienVU.framework */,
+				4B905C83CC98D38B5C2C9F40 /* Pods_bienVUTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -655,7 +667,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DansMaRue/Pods-DansMaRue-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-bienVU/Pods-bienVU-resources.sh",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 			);
@@ -666,7 +678,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DansMaRue/Pods-DansMaRue-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-bienVU/Pods-bienVU-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5AEFD07159E4B4318B99685A /* [CP] Check Pods Manifest.lock */ = {
@@ -680,7 +692,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-DansMaRueTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-bienVUTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -693,7 +705,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DansMaRue/Pods-DansMaRue-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-bienVU/Pods-bienVU-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework",
 				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework.dSYM",
@@ -722,7 +734,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DansMaRue/Pods-DansMaRue-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-bienVU/Pods-bienVU-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CDE0AA281E9E46F9006EA9FB /* ShellScript */ = {
@@ -749,7 +761,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-DansMaRue-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-bienVU-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -902,7 +914,7 @@
 		};
 		288C596F1EB8908400A9EC5B /* Staging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8F84B15D8DBA2950D5A2756D /* Pods-DansMaRue.staging.xcconfig */;
+			baseConfigurationReference = EE39ABBCEA6CF31460F3EA1F /* Pods-bienVU.staging.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DansMaRue/DansMaRue.entitlements;
@@ -927,13 +939,13 @@
 		};
 		288C59701EB8908400A9EC5B /* Staging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5A59C084EB229C729ABB8B8B /* Pods-DansMaRueTests.staging.xcconfig */;
+			baseConfigurationReference = 53A97D6204B7F4583D6D6E1B /* Pods-bienVUTests.staging.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = DansMaRueTests/Info.plist;
+				INFOPLIST_FILE = bienVUTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.paris.DansMaRueTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.plainecommune.bienvuTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.2;
@@ -1054,7 +1066,7 @@
 		};
 		CD052AC31E7AED1F00571E6C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4D0E6427873BDC408B820D63 /* Pods-DansMaRue.debug.xcconfig */;
+			baseConfigurationReference = 1F3FE6477F6CCC276F9CC4A9 /* Pods-bienVU.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DansMaRue/DansMaRue.entitlements;
@@ -1079,7 +1091,7 @@
 		};
 		CD052AC41E7AED1F00571E6C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6C4ECCEB5272A1BB61F05431 /* Pods-DansMaRue.release.xcconfig */;
+			baseConfigurationReference = EDFC861527E887435FA9CC5D /* Pods-bienVU.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DansMaRue/DansMaRue.entitlements;
@@ -1106,13 +1118,13 @@
 		};
 		CD052AC61E7AED1F00571E6C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0A6B345BE2531A9036AC9BDF /* Pods-DansMaRueTests.debug.xcconfig */;
+			baseConfigurationReference = 587C948A346C1E57D72C9E8E /* Pods-bienVUTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = DansMaRueTests/Info.plist;
+				INFOPLIST_FILE = bienVUTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.paris.DansMaRueTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.plainecommune.bienvuTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.2;
@@ -1122,13 +1134,13 @@
 		};
 		CD052AC71E7AED1F00571E6C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BCAA5B9EF47F2D99361C3992 /* Pods-DansMaRueTests.release.xcconfig */;
+			baseConfigurationReference = 51D295BE4B891B6BA15428E4 /* Pods-bienVUTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = DansMaRueTests/Info.plist;
+				INFOPLIST_FILE = bienVUTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.paris.DansMaRueTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.plainecommune.bienvuTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.2;
