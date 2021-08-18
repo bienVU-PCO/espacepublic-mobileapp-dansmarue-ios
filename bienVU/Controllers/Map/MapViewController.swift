@@ -757,7 +757,7 @@ extension MapViewController: GMSAutocompleteResultsViewControllerDelegate {
         }
         let adresse = numRue + " " + rue + ", " + cp + " Paris, France"
         
-        retrieve(currentLocation: place.coordinate, addMarker: true, address: adresse, cp: cp) { (result: Bool) in }
+        retrieve(currentLocation: place.coordinate, addMarker: true, address: place.formattedAddress!, cp: cp) { (result: Bool) in }
         
     }
     

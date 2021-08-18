@@ -25,10 +25,10 @@ class MapsUtils : NSObject {
     open class func filterToParis(resultsViewController: GMSAutocompleteResultsViewController) {
         
         // Set bounds to inner-west Paris.
-        let neBoundsCorner = CLLocationCoordinate2D(latitude: 48.900838,
-                                                    longitude: 2.392702)
-        let swBoundsCorner = CLLocationCoordinate2D(latitude: 48.833312,
-                                                    longitude: 2.256832)
+        let neBoundsCorner = CLLocationCoordinate2D(latitude: 48.96172994133251,
+                                                    longitude: 2.4158300515151954)
+        let swBoundsCorner = CLLocationCoordinate2D(latitude: 48.89876690521168,
+                                                    longitude: 2.3084427954436837)
         let bounds = GMSCoordinateBounds(coordinate: neBoundsCorner,
                                          coordinate: swBoundsCorner)
         
