@@ -52,10 +52,11 @@ class AddAnomalyViewController: UIViewController, UITextFieldDelegate, UIPickerV
         if let location = MapsUtils.userLocation() {
             if currentAnomalie == nil {
                 if self.typeContribution == .outdoor {
-                    currentAnomalie = Anomalie(address: MapsUtils.fullAddress(), latitude: location.latitude, longitude: location.longitude, categorieId: nil, descriptive: nil, priorityId: Priority.genant.rawValue, photo1: nil, photo2: nil, anomalieStatus: .Nouveau, mailUser: "", number: "" )
+                    currentAnomalie = Anomalie(address: MapsUtils.fullAddress(), latitude: location.latitude, longitude: location.longitude, categorieId: nil, descriptive: nil, priorityId: Priority.genant.rawValue, photo1: nil, photo2: nil, anomalieStatus: .Nouveau, mailUser: "", number: "")
                     if let myAddress = currentAnomalie?.address {
                         currentAnomalie?.streetName = MapsUtils.addressLabel
                         currentAnomalie?.postalCode = MapsUtils.getPostalCode(address: myAddress)
+                        currentAnomalie?.locality = MapsUtils.locality
                     }
                 } else if let equipement = ContextManager.shared.equipementSelected {
                     showAlertMessagePhoto(equipement: equipement)
@@ -138,7 +139,7 @@ class AddAnomalyViewController: UIViewController, UITextFieldDelegate, UIPickerV
     @IBAction func publier(_ sender: UIButton_PublierAnomalie) {
          
         //On vérifie que l'adresse est bien dans paris avant la publication
-        if(!(currentAnomalie?.postalCode.hasPrefix(Constants.prefix93))!){
+        if(!MapsUtils.isInPC(locality: currentAnomalie!.locality)){
             
             //message alerte
             let alertController = UIAlertController(title: Constants.AlertBoxTitle.adresseInvalide, message: Constants.AlertBoxMessage.adresseInvalide, preferredStyle: .alert)

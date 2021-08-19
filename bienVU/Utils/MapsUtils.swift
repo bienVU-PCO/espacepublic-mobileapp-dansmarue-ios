@@ -20,7 +20,7 @@ class MapsUtils : NSObject {
     static var boroughLabel = ""
     static var postalCode = ""
     static var locality = ""
-
+    static let villePC = ["L\'Île-Saint-Denis", "Aubervilliers","Épinay-sur-Seine","La Courneuve","Pierrefitte-sur-Seine","Saint-Denis","Saint-Ouen","Villetaneuse","Stains"]
         
     open class func filterToParis(resultsViewController: GMSAutocompleteResultsViewController) {
         
@@ -152,6 +152,11 @@ class MapsUtils : NSObject {
             }
             onCompletion(location.coordinate)
         }
+    }
+    
+    //Vérifie que l'adresse est bien dans Plaine Commune
+    open class func isInPC(locality: String)  -> Bool {
+        return villePC.contains(locality)
     }
 }
 

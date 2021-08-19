@@ -339,7 +339,7 @@ class BottomSheetViewController: UIViewController, UITextFieldDelegate {
         //Ajout d'une adresse aux favoris
         if(recognizer.addFavorite) {
             //Vérification si l'adresse est dans Paris
-            if MapsUtils.postalCode.hasPrefix(Constants.prefix93) {
+            if MapsUtils.isInPC(locality: MapsUtils.locality) {
                 favorite.append(addressWithCoordonate)
             } else {
                 //Si hors de Paris, affichage d'une popup d'erreur
@@ -530,7 +530,7 @@ class BottomSheetViewController: UIViewController, UITextFieldDelegate {
     
     func displayAddAnomalyView() {
         // Outdoor : Si utilisateur connecté et en dehors de Paris, alors affiche message d'erreur
-        if Reach().connectionStatus() && !MapsUtils.postalCode.hasPrefix(Constants.prefix93) && ContextManager.shared.typeContribution == .outdoor {
+        if Reach().connectionStatus() && !MapsUtils.isInPC(locality: MapsUtils.locality) && ContextManager.shared.typeContribution == .outdoor {
             let alertController = UIAlertController(title: Constants.AlertBoxTitle.adresseInvalide, message: Constants.AlertBoxMessage.adresseInvalide, preferredStyle: .alert)
             // Create OK button
             let OKAction = UIAlertAction(title: Constants.AlertBoxTitle.ok, style: .default) {
@@ -875,7 +875,7 @@ extension BottomSheetViewController: UITableViewDataSource {
                 titleLabel.text = MapsUtils.addressLabel
                 
                 if ContextManager.shared.typeContribution == .outdoor || self.selectEquipement == nil {
-                    titleLabel.text = MapsUtils.addressLabel + "\n" + MapsUtils.boroughLabel
+                    titleLabel.text = MapsUtils.addressLabel + "\n" + MapsUtils.boroughLabel  + " " + MapsUtils.locality
                 } else if ContextManager.shared.typeContribution == .indoor {
                     titleLabel.text = selectEquipement?.name
                 }
@@ -1063,14 +1063,14 @@ extension BottomSheetViewController: UITableViewDataSource {
                     arrondissement.append(" ème")
                 }
                 MapsUtils.boroughLabel = arrondissement
-                geolocSubtitle.text = MapsUtils.boroughLabel
+                geolocSubtitle.text = MapsUtils.boroughLabel + " " + MapsUtils.locality
                 geolocSubtitle.isHidden = false
             }
             
             if let postalCode = myAddress.postalCode {
                 MapsUtils.postalCode = postalCode
                 MapsUtils.boroughLabel = postalCode
-                geolocSubtitle.text = MapsUtils.boroughLabel
+                geolocSubtitle.text = MapsUtils.boroughLabel + " " + MapsUtils.locality
                 geolocSubtitle.isHidden = false
             }
             if let locality = myAddress.locality {
