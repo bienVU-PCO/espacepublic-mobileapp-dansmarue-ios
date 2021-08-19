@@ -1075,6 +1075,7 @@ extension BottomSheetViewController: UITableViewDataSource {
             }
             if let locality = myAddress.locality {
                 MapsUtils.locality = locality
+                geolocSubtitle.text = MapsUtils.boroughLabel + " " + MapsUtils.locality
             }
             
             //Gestion de l'affichage du btn de gestion de favoris
