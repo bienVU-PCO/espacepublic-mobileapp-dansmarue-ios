@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>$(MARKETING_VERSION)</string>
+	<string>1.0.0</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -30,7 +30,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<string>1</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -161,7 +161,7 @@
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Vous permet de vous localiser pour créer une anomalie</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Vous permet d'ajouter des photos à vos anomalies</string>
+	<string>Vous permet d&apos;ajouter des photos à vos anomalies</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Montserrat-Bold.otf</string>

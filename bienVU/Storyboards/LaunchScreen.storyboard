@@ -23,9 +23,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_dansMaRue" translatesAutoresizingMaskIntoConstraints="NO" id="bfI-RC-ly1">
-                                <rect key="frame" x="84" y="303" width="247" height="257"/>
+                                <rect key="frame" x="84" y="319.5" width="247" height="257"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="bfI-RC-ly1" secondAttribute="height" multiplier="247:257" id="IRT-Wq-XWb"/>
+                                    <constraint firstAttribute="width" secondItem="bfI-RC-ly1" secondAttribute="height" multiplier="247:257" id="owy-Wl-tkm"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -34,13 +35,14 @@
                             <constraint firstItem="EI7-uX-hjm" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top" id="FSM-je-tNn"/>
                             <constraint firstItem="EI7-uX-hjm" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="HnU-om-UOC"/>
                             <constraint firstItem="bfI-RC-ly1" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="64" id="I6i-vB-qkV"/>
+                            <constraint firstItem="bfI-RC-ly1" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="IdF-8q-YVS"/>
                             <constraint firstItem="EI7-uX-hjm" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Kdp-ca-sgH"/>
                             <constraint firstItem="EI7-uX-hjm" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Mam-or-Lhc"/>
                             <constraint firstItem="EI7-uX-hjm" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="O43-nY-QzE"/>
+                            <constraint firstItem="bfI-RC-ly1" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="SBw-mD-ZCB"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="EI7-uX-hjm" secondAttribute="bottom" id="TqQ-Jg-FPq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bfI-RC-ly1" secondAttribute="trailing" constant="63" id="ibv-0y-zmO"/>
                             <constraint firstAttribute="trailing" secondItem="EI7-uX-hjm" secondAttribute="trailing" id="uEZ-Sy-1aC"/>
-                            <constraint firstItem="bfI-RC-ly1" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="259" id="yUW-hg-JrM"/>
                         </constraints>
                     </view>
                 </viewController>
