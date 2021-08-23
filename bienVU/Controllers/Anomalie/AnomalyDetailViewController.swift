@@ -124,9 +124,9 @@ class AnomalyDetailViewController: UIViewController {
                 self.solvedButton.backgroundColor = UIColor.greyDmr()
             }
             
-        
+            self.followButton.isHidden = true
             //Suivi d'une anomalie
-            if let anomalie = self.selectedAnomaly, !anomalie.isIncidentFollowedByUser {
+           /* if let anomalie = self.selectedAnomaly, !anomalie.isIncidentFollowedByUser {
                 self.followButton.isHidden = false
                 self.followButton.isEnabled = anomalie.source == .dmr
                 self.followButton.setImage(self.imgFollow, for: .normal)
@@ -136,8 +136,8 @@ class AnomalyDetailViewController: UIViewController {
                 self.followButton.isEnabled = true
                 self.followButton.setImage(self.imgUnfollow, for: .normal)
                 self.followButton.accessibilityLabel = Constants.LabelMessage.unfollowAnomaly
-            }
-            
+            }*/
+        
         case .solved:
             self.anomalyCloseButton.isHidden = false
             self.anomalyEditButton.isHidden = true

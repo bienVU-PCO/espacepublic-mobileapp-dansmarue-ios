@@ -261,18 +261,23 @@ class BottomSheetViewController: UIViewController, UITextFieldDelegate {
         congratulateAnomalyBtn?.isEnabled = true
         hidemanageFavoriteBtns = true
         
+        //Suppression temporaire btn folow - fonctionnalité monparis
         if selectAnomalie?.anomalieStatus == .Resolu {
-            followAnomalyBtn?.isHidden = true
-            unfollowAnomalyBtn?.isHidden = true
+            //followAnomalyBtn?.isHidden = true
+           //unfollowAnomalyBtn?.isHidden = true
+            addFavoriteBtn?.isHidden = true
+            removeFavoriteBtn?.isHidden = true
             congratulateAnomalyBtn?.isHidden = false
             
         } else {
-            followAnomalyBtn?.isHidden = anomalie.isIncidentFollowedByUser
-            unfollowAnomalyBtn?.isHidden = !anomalie.isIncidentFollowedByUser
+            //followAnomalyBtn?.isHidden = anomalie.isIncidentFollowedByUser
+            //unfollowAnomalyBtn?.isHidden = !anomalie.isIncidentFollowedByUser
+            addFavoriteBtn?.isHidden = true
+            removeFavoriteBtn?.isHidden = true
             congratulateAnomalyBtn?.isHidden = true
             
-            followAnomalyBtn?.isEnabled = anomalie.source == .dmr
-            unfollowAnomalyBtn?.isEnabled = anomalie.source == .dmr
+            //followAnomalyBtn?.isEnabled = anomalie.source == .dmr
+           // unfollowAnomalyBtn?.isEnabled = anomalie.source == .dmr
         }
     }
     
@@ -443,19 +448,19 @@ class BottomSheetViewController: UIViewController, UITextFieldDelegate {
                     congratulateAnomalyBtn?.isHidden = false
                     
                 } else {
-                    followAnomalyBtn?.isHidden = anomalie.isIncidentFollowedByUser
-                    unfollowAnomalyBtn?.isHidden = !anomalie.isIncidentFollowedByUser
+                    //followAnomalyBtn?.isHidden = anomalie.isIncidentFollowedByUser
+                    //unfollowAnomalyBtn?.isHidden = !anomalie.isIncidentFollowedByUser
                     congratulateAnomalyBtn?.isHidden = true
                     
-                    followAnomalyBtn?.isEnabled = anomalie.source == .dmr
-                    unfollowAnomalyBtn?.isEnabled = anomalie.source == .dmr
+                    //followAnomalyBtn?.isEnabled = anomalie.source == .dmr
+                    //unfollowAnomalyBtn?.isEnabled = anomalie.source == .dmr
                 }
                 
             } else {
                 // Cas d'une anomalie indoor ou pas d'anomalie sélectionnée
                 addAnomalyBtn?.isHidden = false
-                followAnomalyBtn?.isHidden = true
-                unfollowAnomalyBtn?.isHidden = true
+                //followAnomalyBtn?.isHidden = true
+                //unfollowAnomalyBtn?.isHidden = true
                 congratulateAnomalyBtn?.isHidden = true
                 hidemanageFavoriteBtns = false
             }
