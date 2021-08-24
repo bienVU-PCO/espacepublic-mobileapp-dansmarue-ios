@@ -147,7 +147,7 @@ struct Constants {
         static let profilMenuSelected = "profil_menu_selected"
         static let iconEdit = "icon_edit"
         static let iconMonCompte = "monCompte"
-        static let ramen = "image_1000"
+        static let ramen = "image_12159"
         static let favoriteUncheck = "favorite_uncheck"
         static let favoriteCheck = "favorite_check"
         static let favoritePlus = "favorite_plus"

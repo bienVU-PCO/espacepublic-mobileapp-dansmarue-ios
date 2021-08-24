@@ -533,7 +533,7 @@
 				CD052AA31E7AED1E00571E6C /* Resources */,
 				BDEC07101AC65D4DC23F9FBE /* [CP] Embed Pods Frameworks */,
 				054F17B96F4BE719F82F2110 /* [CP] Copy Pods Resources */,
-				CDE0AA281E9E46F9006EA9FB /* ShellScript */,
+				916197EE26D4F2E100931BFB /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -699,6 +699,25 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		916197EE26D4F2E100931BFB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
+		};
 		BDEC07101AC65D4DC23F9FBE /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -736,19 +755,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-bienVU/Pods-bienVU-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
-		};
-		CDE0AA281E9E46F9006EA9FB /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" de2a9cb6ce619d541840b0491f6568489833545f 2c6f683bae3205f23bbfd95a8ef5e6702603c404850f628b5c77cea053e2581b";
 		};
 		EE594E599E9E4DF30818D416 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

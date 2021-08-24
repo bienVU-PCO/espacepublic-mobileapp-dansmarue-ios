@@ -7,33 +7,289 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8E598B5F-AECC-4E2E-BB03-4C54BC42A8A8"
+            uuid = "61A38703-0FD9-46AD-9A57-0D45C527411D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "bienVU/Controllers/Profile/ProfileViewController.swift"
+            filePath = "bienVU/Controllers/Map/MapViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "viewDidAppear(_:)"
+            startingLineNumber = "758"
+            endingLineNumber = "758"
+            landmarkName = "resultsController(_:didAutocompleteWith:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B37199DA-2230-411A-8B15-5FED883BE36E"
+            uuid = "D272F7CE-0613-4482-A7BF-5B8516E4F5FB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "bienVU/Controllers/Anomalie/AddAnomalyViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "435"
+            endingLineNumber = "435"
+            landmarkName = "changeAddress(newAddress:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5485C248-F95C-4E9F-B1EA-FB0974F43BEA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "bienVU/Controllers/Map/BottomSheetViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1020"
+            endingLineNumber = "1020"
+            landmarkName = "showDetailEquipement(forCell:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0D8E6B89-5D9A-4671-AFFB-1DE84BCEB1AC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "bienVU/Services/RestApiManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "475"
+            endingLineNumber = "475"
+            landmarkName = "saveIncident(anomalie:onCompletion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FC32A93B-974E-4E42-97A1-58E0B9ADA4A5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "bienVU/Services/RestApiManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "458"
+            endingLineNumber = "458"
+            landmarkName = "saveIncident(anomalie:onCompletion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FC32A93B-974E-4E42-97A1-58E0B9ADA4A5 - d0ed3da4c4e48f31"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool) -&gt; () in closure #1 (SwiftyJSON.JSON, Swift.Optional&lt;__C.NSError&gt;) -&gt; () in bienVU.RestApiManager.saveIncident(anomalie: bienVU.Anomalie, onCompletion: (Swift.Bool) -&gt; ()) -&gt; ()"
+                  moduleName = "bienVU"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/geoffroy.huet/Documents/workspace/bienvu-ios/bienVU/Services/RestApiManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "458"
+                  endingLineNumber = "458"
+                  offsetFromSymbolStart = "2410">
+               </Location>
+               <Location
+                  uuid = "FC32A93B-974E-4E42-97A1-58E0B9ADA4A5 - c7b1b45f47cea12e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Bool) -&gt; () in closure #1 (Swift.Bool) -&gt; () in closure #1 (SwiftyJSON.JSON, Swift.Optional&lt;__C.NSError&gt;) -&gt; () in bienVU.RestApiManager.saveIncident(anomalie: bienVU.Anomalie, onCompletion: (Swift.Bool) -&gt; ()) -&gt; ()"
+                  moduleName = "bienVU"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/geoffroy.huet/Documents/workspace/bienvu-ios/bienVU/Services/RestApiManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "459"
+                  endingLineNumber = "459"
+                  offsetFromSymbolStart = "37">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8B69BB83-1139-41A6-BE8D-0FD26FF180A2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "bienVU/Services/RestApiManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "533"
+            endingLineNumber = "533"
+            landmarkName = "appelWorkflow(baseUrl:incidentId:onCompletion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8B69BB83-1139-41A6-BE8D-0FD26FF180A2 - 2ea6796b2ccaf658"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "bienVU.RestApiManager.appelWorkflow(baseUrl: Swift.String, incidentId: Swift.String, onCompletion: (Swift.Bool) -&gt; ()) -&gt; ()"
+                  moduleName = "bienVU"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/geoffroy.huet/Documents/workspace/bienvu-ios/bienVU/Services/RestApiManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "533"
+                  endingLineNumber = "533"
+                  offsetFromSymbolStart = "663">
+               </Location>
+               <Location
+                  uuid = "8B69BB83-1139-41A6-BE8D-0FD26FF180A2 - 2c2621d93ed21c5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (SwiftyJSON.JSON, Swift.Optional&lt;__C.NSError&gt;) -&gt; () in bienVU.RestApiManager.appelWorkflow(baseUrl: Swift.String, incidentId: Swift.String, onCompletion: (Swift.Bool) -&gt; ()) -&gt; ()"
+                  moduleName = "bienVU"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/geoffroy.huet/Documents/workspace/bienvu-ios/bienVU/Services/RestApiManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "535"
+                  endingLineNumber = "535"
+                  offsetFromSymbolStart = "397">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "55EF61C3-924B-41FD-92E3-1CA8293837FE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "bienVU/Services/RestApiManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "544"
+            endingLineNumber = "544"
+            landmarkName = "appelWorkflow(baseUrl:incidentId:onCompletion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "15CCD702-7F26-4115-B099-165095DE9E3E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "bienVU/Controllers/Map/BottomSheetViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "253"
+            endingLineNumber = "253"
+            landmarkName = "showAnomalie(anomalie:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5558FC33-16DE-4F8F-A9C5-F9048ED46AF4"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "bienVU/SupportingFiles/AppDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "applicationWillEnterForeground(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5558FC33-16DE-4F8F-A9C5-F9048ED46AF4 - e338f0335288cc4d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "bienVU.AppDelegate.applicationWillEnterForeground(__C.UIApplication) -&gt; ()"
+                  moduleName = "bienVU"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/geoffroy.huet/Documents/workspace/bienvu-ios/bienVU/SupportingFiles/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "121"
+                  endingLineNumber = "121"
+                  offsetFromSymbolStart = "42">
+               </Location>
+               <Location
+                  uuid = "5558FC33-16DE-4F8F-A9C5-F9048ED46AF4 - 89e7e19bbde38bd7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool, Swift.Optional&lt;__C.NSError&gt;) -&gt; () in bienVU.AppDelegate.applicationWillEnterForeground(__C.UIApplication) -&gt; ()"
+                  moduleName = "bienVU"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/geoffroy.huet/Documents/workspace/bienvu-ios/bienVU/SupportingFiles/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "122"
+                  endingLineNumber = "122"
+                  offsetFromSymbolStart = "130">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5683C000-C51B-4602-82A9-5507259E0C08"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "bienVU/Controllers/MainViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "isLatestVersion()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "43265B23-2E27-47CA-9392-A2239C2FCD38"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "bienVU/Controllers/Profile/ProfileViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "463"
+            endingLineNumber = "463"
+            landmarkName = "displayAnomalie(atSection:andRow:_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E427343F-21C2-4DB4-AB6B-106CBA42D7C7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "bienVU/Model/Anomalie.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "imageCategorie"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
