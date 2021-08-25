@@ -287,7 +287,9 @@ extension ProfileViewController: UITableViewDelegate {
                 }
             } else {
                 addAnomalyViewController.typeContribution = .outdoor
-                addAnomalyViewController.currentAnomalie = malfunctionDraftArray[indexPath.row]
+                let ano = malfunctionDraftArray[indexPath.row]
+                ano.locality = MapsUtils.locality
+                addAnomalyViewController.currentAnomalie = ano
             }
             self.navigationController?.pushViewController(addAnomalyViewController, animated: true)
         case .Ouvert, .ATraiter:
