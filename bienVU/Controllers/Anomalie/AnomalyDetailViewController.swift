@@ -365,10 +365,10 @@ class AnomalyDetailViewController: UIViewController {
     
     @IBAction func congratsTheAnomaly(_ sender: Any) {
         
-        if(!User.shared.isLogged){
+       /* if(!User.shared.isLogged){
             let compteParisienVC = UIStoryboard(name: Constants.StoryBoard.compteParisien, bundle: nil).instantiateViewController(withIdentifier: Constants.ViewControllerIdentifier.compteParisien)
             self.navigationController?.present(compteParisienVC, animated: true)
-        } else {
+        } else {*/
             
             var cancelAction = false
             self.congratsButton.isEnabled = false
@@ -415,7 +415,7 @@ class AnomalyDetailViewController: UIViewController {
             }
             snackbar.show()
             
-        }
+        
         
     }
     

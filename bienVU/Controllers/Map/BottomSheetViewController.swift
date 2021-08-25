@@ -721,10 +721,10 @@ class BottomSheetViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func tapCongratulateAnomaly(sender: UIButton) {
-        if(!User.shared.isLogged){
+       /* if(!User.shared.isLogged){
             let compteParisienVC = UIStoryboard(name: Constants.StoryBoard.compteParisien, bundle: nil).instantiateViewController(withIdentifier: Constants.ViewControllerIdentifier.compteParisien)
             self.navigationController?.present(compteParisienVC, animated: true)
-        } else {
+        } else {*/
             if let anomalie = selectAnomalie {
                 var cancelAction = false
                 self.congratulateAnomalyBtn?.isEnabled = false
@@ -762,7 +762,7 @@ class BottomSheetViewController: UIViewController, UITextFieldDelegate {
                 }
                 snackbar.show()
             }
-        }
+        
         
      }
 }
