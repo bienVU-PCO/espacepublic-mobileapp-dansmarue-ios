@@ -18,7 +18,7 @@
         <!--Map View Controller-->
         <scene sceneID="uOF-bD-hll">
             <objects>
-                <viewController storyboardIdentifier="MapViewController" id="S8P-MQ-UqN" customClass="MapViewController" customModule="DansMaRue" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" id="S8P-MQ-UqN" customClass="MapViewController" customModule="bienVU" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Oke-iU-iAb"/>
                         <viewControllerLayoutGuide type="bottom" id="1mz-Im-xEZ"/>
@@ -66,12 +66,12 @@
         <!--Bottom Sheet View Controller-->
         <scene sceneID="Aap-bR-FnL">
             <objects>
-                <viewController storyboardIdentifier="BottomSheetViewController" id="LeH-Xc-wEa" customClass="BottomSheetViewController" customModule="DansMaRue" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BottomSheetViewController" id="LeH-Xc-wEa" customClass="BottomSheetViewController" customModule="bienVU" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JEL-rY-9x4"/>
                         <viewControllerLayoutGuide type="bottom" id="8mg-mp-kDl"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="cTv-RS-hCi" customClass="BottomSheetView" customModule="DansMaRue" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="cTv-RS-hCi" customClass="BottomSheetView" customModule="bienVU" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -92,7 +92,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="103" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="boroughLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jP2-tB-RqP">
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="103" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="boroughLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jP2-tB-RqP">
                                                     <rect key="frame" x="70" y="70" width="224" height="14"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -242,7 +242,7 @@
         <!--Equipement Search Table View Controller-->
         <scene sceneID="itd-6A-owa">
             <objects>
-                <tableViewController storyboardIdentifier="EquipementSearchTableViewController" id="cJV-2c-42b" customClass="EquipementSearchTableViewController" customModule="DansMaRue" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="EquipementSearchTableViewController" id="cJV-2c-42b" customClass="EquipementSearchTableViewController" customModule="bienVU" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="F1Y-Fb-JdI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

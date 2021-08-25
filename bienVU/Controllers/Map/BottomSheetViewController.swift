@@ -860,11 +860,11 @@ extension BottomSheetViewController: UITableViewDataSource {
             if self.otherCellDisplay {
                 customCell?.backgroundColor = UIColor.pinkDmr()
                 geolocMainTitle.textColor = .white
-                geolocSubtitle.textColor = UIColor.lightGreyDmr()
+                geolocSubtitle.textColor = .white
             } else {
                 customCell?.backgroundColor = .white
                 geolocMainTitle.textColor = .black
-                geolocSubtitle.textColor = UIColor.lightGreyDmr()
+                geolocSubtitle.textColor = UIColor.greyDmr()
             }
             
             if buttomSheetFullView {
