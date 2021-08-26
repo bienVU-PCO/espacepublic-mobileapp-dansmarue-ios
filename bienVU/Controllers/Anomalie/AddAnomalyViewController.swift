@@ -596,7 +596,7 @@ extension AddAnomalyViewController: UITableViewDataSource {
                     let streetName = currentAnomalie?.streetName
                     let postalCode = currentAnomalie?.postalCode
                     addressLabel.text = streetName
-                    boroughLabel.text = postalCode
+                    boroughLabel.text = postalCode! + " " + currentAnomalie!.locality 
 
                 }
             } else if self.typeContribution == .indoor {

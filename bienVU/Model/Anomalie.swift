@@ -172,6 +172,7 @@ class Anomalie : NSObject, NSCoding {
         aCoder.encode(address, forKey: "address")
         aCoder.encode(streetName, forKey: "streetName")
         aCoder.encode(postalCode, forKey: "postalCode")
+        aCoder.encode(locality, forKey: "locality")
         aCoder.encode(latitude, forKey: "latitude")
         aCoder.encode(longitude, forKey: "longitude")
         aCoder.encode(categorieId, forKey: "categorieId")
@@ -186,6 +187,7 @@ class Anomalie : NSObject, NSCoding {
         self.address = decoder.decodeObject(forKey: "address") as? String ?? ""
         self.streetName = decoder.decodeObject(forKey: "streetName") as? String ?? ""
         self.postalCode = decoder.decodeObject(forKey: "postalCode") as? String ?? ""
+        self.locality = decoder.decodeObject(forKey: "locality") as? String ?? ""
         self.latitude = decoder.decodeDouble(forKey: "latitude") 
         self.longitude = decoder.decodeDouble(forKey: "longitude") 
         self.categorieId = decoder.decodeObject(forKey: "categorieId") as? String ?? ""
