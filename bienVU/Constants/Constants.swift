@@ -201,7 +201,7 @@ struct Constants {
         static let noConnexion = "Vous n'avez aucune connexion."
         static let anomalieResolue = "Vous signalez cette anomalie comme résolue."
         static let erreurChargementTypes = "Suite à un problème réseau, les données nécessaires à la création de votre demande n'ont pas pu être récupérées.\n Merci de recommencer ultérieurement"
-        static let errorSaveLabel = "\nL\'application bien VU est actuellement en maintenance.\n\nMerci d\'essayer ultérieurement.\n\n Un brouillon a été sauvegardé dans votre espace"
+        static let errorSaveLabel = "\nL\'application bienVU est actuellement en maintenance.\n\nMerci d\'essayer ultérieurement.\n\n Un brouillon a été sauvegardé dans votre espace"
         static let grantPhoto = "Veuillez accorder l'autorisation d'utiliser la caméra pour pouvoir prendre des photos."
         static let solvedMalfunction = "Vous déclarez ce signalement comme résolu."
         static let optinAutorisation = "Autorisez vous l'application à transmettre vos données de localisation et votre identifiant de téléphone"
@@ -210,7 +210,7 @@ struct Constants {
         static let numRueObligatoire = "Pour une meilleure prise en charge de l'anomalie, veuillez compléter l'adresse avec un numéro de rue"
         static let erreurChargementEquipement = "Suite à un problème réseau, les données nécessaires à la récupération des équipements n'ont pas pu etre chargées"
         static let adresseHorsParis = "Impossible d'ajouter une adresse hors Plaine commune aux favoris"
-        static let maintenance = "\nL'application bien VU est actuellement en maintenance.\n\nMerci d'essayer ultérieurement."
+        static let maintenance = "\nL'application bienVU est actuellement en maintenance.\n\nMerci d'essayer ultérieurement."
         static let searchAnomaly = "Renseigner ci-dessous le numéro exact de l’anomalie"
     }
     
