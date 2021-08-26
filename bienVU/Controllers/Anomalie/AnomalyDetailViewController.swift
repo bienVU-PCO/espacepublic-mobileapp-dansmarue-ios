@@ -174,7 +174,7 @@ class AnomalyDetailViewController: UIViewController {
             self.mainTitleLabel.text = anomalie.alias
             self.anomalyDescriptionLabel.text = anomalie.descriptive
             self.anomalyStreetLabel.text = MapsUtils.getStreetAddress(address: anomalie.address)
-            self.anomalyStreetBisLabel.text = postalCode
+            self.anomalyStreetBisLabel.text = postalCode + " " + MapsUtils.locality
             self.timelineLabel.text = DateUtils.formatDateByLocal(dateString: anomalie.date) + " " + anomalie.hour + "\n" + anomalie.number
             self.timelineLabel.lineBreakMode = .byClipping
             self.timelineLabel.numberOfLines=0
