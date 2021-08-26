@@ -392,8 +392,15 @@ class RestApiManager: NSObject {
         let uuid = UIDevice.current.identifierForVendor?.uuidString ?? "-1"
         let guid = User.shared.uid ?? ""
         let userToken = UserDefaults.standard.string(forKey: Constants.Key.deviceToken) ?? "-1"
+        var description = anomalie.descriptive.toHttpBody()
         
-        var bodyNoJson = "jsonStream=[{\"request\":\"saveIncident\",\"email\":\"\(anomalie.mailUser)\",\"incident\":{\"categoryId\":\(anomalie.categorieId),\"address\":\"\(anomalie.address)\",\"descriptive\":\"\(anomalie.descriptive.toHttpBody())\",\"priorityId\":\(anomalie.priorityId), \"origin\": \"A\"}, \"position\":{\"latitude\":\(anomalie.latitude),\"longitude\":\(anomalie.longitude)}, \"udid\":\"\(uuid)\", \"guid\":\"\(guid)\", \"userToken\":\"\(userToken)\"}]"
+        
+        if anomalie.descriptive.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) != nil
+        {
+            description = anomalie.descriptive.toHttpBody().addingPercentEncoding(withAllowedCharacters: .symbols)!
+        }
+        
+        var bodyNoJson = "jsonStream=[{\"request\":\"saveIncident\",\"email\":\"\(anomalie.mailUser)\",\"incident\":{\"categoryId\":\(anomalie.categorieId),\"address\":\"\(anomalie.address)\",\"descriptive\":\"\(description)\",\"priorityId\":\(anomalie.priorityId), \"origin\": \"A\"}, \"position\":{\"latitude\":\(anomalie.latitude),\"longitude\":\(anomalie.longitude)}, \"udid\":\"\(uuid)\", \"guid\":\"\(guid)\", \"userToken\":\"\(userToken)\"}]"
         
         
         if let anoEquipement = anomalie as? AnomalieEquipement {
