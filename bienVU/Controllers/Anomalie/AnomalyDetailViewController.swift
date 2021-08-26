@@ -178,7 +178,7 @@ class AnomalyDetailViewController: UIViewController {
             self.timelineLabel.text = DateUtils.formatDateByLocal(dateString: anomalie.date) + " " + anomalie.hour + "\n" + anomalie.number
             self.timelineLabel.lineBreakMode = .byClipping
             self.timelineLabel.numberOfLines=0
-            self.concernedLabel.text = "\(anomalie.followers) intéressé(e)s"
+            //self.concernedLabel.text = "\(anomalie.followers) intéressé(e)s"
             self.greetingsLabel.text = "\(anomalie.congratulations) félicitation(s)"
             
             self.previousButton.isHidden = anomalie.nbPhoto <= 1
