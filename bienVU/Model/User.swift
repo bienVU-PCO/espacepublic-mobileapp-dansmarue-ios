@@ -25,49 +25,31 @@ class User {
     var isLogged:Bool = false
     
     private init() {
-        firstName = UserDefaults.standard.object(forKey: Constants.Key.firstName) as? String
-        lastName = UserDefaults.standard.object(forKey: Constants.Key.lastName) as? String
         email = UserDefaults.standard.object(forKey: Constants.Key.email) as? String
-        password = UserDefaults.standard.object(forKey: Constants.Key.password) as? String
         isAgent = UserDefaults.standard.object(forKey: Constants.Key.isAgent) as? Bool
     }
     
     static let shared = User()
     
     func automaticAuthentification() {
-        if let email = self.email, let password = self.password {
-            RestApiManager.sharedInstance.authenticate(email: email, password: password) {
-                (result: Bool) in
+        if let email = self.email {
+            RestApiManager.sharedInstance.isMailAgent(email: email) {
+                (isAgent: Bool) in
                 
-                if result {
-                    print("Autentification réussi ...")
-                    DispatchQueue.main.async {
-                        TTGSnackbar.init(message: "Authentification réussie", duration: .middle).show()
-                    }
-                } else {
-                    print("Echec Autentification ...")
-                    DispatchQueue.main.async {
-                        TTGSnackbar.init(message: "Echec de l'authentification", duration: .middle).show()
-                        self.email = nil
-                        self.password = nil
-                    }
-                }
+                User.shared.email = email
+                User.shared.isAgent = isAgent
+                User.shared.isLogged = true
+                UserDefaults.standard.set(email, forKey: Constants.Key.email)
             }
         }
     }
     
     func disconnect() {
         self.isLogged = false
-        self.firstName = nil
-        self.lastName = nil
         self.email = nil
-        self.password = nil
         self.isAgent = nil
         
-        UserDefaults.standard.removeObject(forKey: Constants.Key.firstName)
-        UserDefaults.standard.removeObject(forKey: Constants.Key.lastName)
         UserDefaults.standard.removeObject(forKey: Constants.Key.email)
-        UserDefaults.standard.removeObject(forKey: Constants.Key.password)
         UserDefaults.standard.removeObject(forKey: Constants.Key.isAgent)
     }
 }

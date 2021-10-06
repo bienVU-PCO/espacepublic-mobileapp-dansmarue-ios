@@ -39,14 +39,10 @@ class ProfileViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        // A supprimer lorsqu'une alternative à monparis sera en place
-        malfunctionTypeSegmentedControl.removeSegment(at: 2, animated: false)
-        malfunctionTypeSegmentedControl.removeSegment(at: 1, animated: false)
         
         self.navigationItem.title = ""
         
-        // A décommenter lorsqu'une alternative à monparis sera en place
-        /*if User.shared.isLogged {
+        if User.shared.isLogged {
             if let firstName = User.shared.firstName, let lastName = User.shared.lastName {
                 self.navigationItem.title = "\(firstName) \(lastName)"
             }
@@ -59,7 +55,7 @@ class ProfileViewController: UIViewController {
             isPremierAffichageFormConnexion=false
             let compteParisienVC = UIStoryboard(name: Constants.StoryBoard.compteParisien, bundle: nil).instantiateViewController(withIdentifier: Constants.ViewControllerIdentifier.compteParisien)
             self.navigationController?.present(compteParisienVC, animated: true)
-        }*/
+        }
         
         self.malfunctionDraftArray = [Anomalie] (AnomalieBrouillon.shared.anomalies.values)
         self.malfunctionDraftArray.sort(by: { $0.dateHour.compare($1.dateHour) == .orderedDescending })
@@ -102,41 +98,30 @@ class ProfileViewController: UIViewController {
     
     func fillMalfunctionSolvedArray() {
         self.malfunctionSolvedArray.removeAll()
-            if User.shared.isLogged, let uid = User.shared.uid {
+            if User.shared.isLogged, let email = User.shared.email {
             DispatchQueue.global().async {
                 //Affichage du spinner de chargement
                 self.showSpinner(onView: self.view)
                 
                 // Récupération des anomalies outdoor
-                RestApiManager.sharedInstance.getIncidentsByUser(guid: uid, isIncidentSolved: true) { (anomalies: [Anomalie]) in
+                RestApiManager.sharedInstance.getIncidentsByUser(email: email, isIncidentSolved: true) { (anomalies: [Anomalie]) in
                     
                     for anomalie in anomalies {
                         self.malfunctionSolvedArray.append(anomalie)
                     }
                     
-                    // Récupération des anomalies indoor
-                    RestApiManager.sharedInstance.getIncidentsEquipementByUser(guid: uid) { (anomalies: [AnomalieEquipement]) in
-
-                        for anomalie in anomalies {
-                            if anomalie.anomalieStatus == .Resolu {
-                                self.malfunctionSolvedArray.append(anomalie)
-                            } else {
-                                self.malfunctionNotSolvedArray.append(anomalie)
-                            }
-                        }
-                        // Tri des anomalies par date
-                        self.malfunctionNotSolvedArray.sort(by: { $0.dateHour.compare($1.dateHour) == .orderedDescending })
-                        self.malfunctionSolvedArray.sort(by: { $0.dateHour.compare($1.dateHour) == .orderedDescending })
+                    // Tri des anomalies par date
+                    self.malfunctionNotSolvedArray.sort(by: { $0.dateHour.compare($1.dateHour) == .orderedDescending })
+                    self.malfunctionSolvedArray.sort(by: { $0.dateHour.compare($1.dateHour) == .orderedDescending })
+                    
+                    DispatchQueue.main.async {
+                        //Fin du chargement
+                        self.removeSpinner()
                         
-                        DispatchQueue.main.async {
-                            //Fin du chargement
-                            self.removeSpinner()
-                            
-                            self.malfunctionTableView.reloadData()
-                            
-                            // Suppression des Badge du push Notification
-                            UIApplication.shared.applicationIconBadgeNumber = 0
-                        }
+                        self.malfunctionTableView.reloadData()
+                        
+                        // Suppression des Badge du push Notification
+                        UIApplication.shared.applicationIconBadgeNumber = 0
                     }
                 }
             }
@@ -146,41 +131,30 @@ class ProfileViewController: UIViewController {
     func fillMalfunctionNotSolvedArray() {
         
         self.malfunctionNotSolvedArray.removeAll()
-        if User.shared.isLogged, let uid = User.shared.uid {
+        if User.shared.isLogged, let email = User.shared.email {
             DispatchQueue.global().async {
                 //Affichage du spinner de chargement
                 self.showSpinner(onView: self.view)
                 
                 // Récupération des anomalies outdoor
-                RestApiManager.sharedInstance.getIncidentsByUser(guid: uid, isIncidentSolved: false) { (anomalies: [Anomalie]) in
+                RestApiManager.sharedInstance.getIncidentsByUser(email: email, isIncidentSolved: false) { (anomalies: [Anomalie]) in
                     
                     for anomalie in anomalies {
                         self.malfunctionNotSolvedArray.append(anomalie)
                     }
                     
-                    // Récupération des anomalies indoor
-                    RestApiManager.sharedInstance.getIncidentsEquipementByUser(guid: uid) { (anomalies: [AnomalieEquipement]) in
-
-                        for anomalie in anomalies {
-                            if anomalie.anomalieStatus == .Resolu {
-                                self.malfunctionSolvedArray.append(anomalie)
-                            } else {
-                                self.malfunctionNotSolvedArray.append(anomalie)
-                            }
-                        }
-                        // Tri des anomalies par date
-                        self.malfunctionNotSolvedArray.sort(by: { $0.dateHour.compare($1.dateHour) == .orderedDescending })
-                        self.malfunctionSolvedArray.sort(by: { $0.dateHour.compare($1.dateHour) == .orderedDescending })
+                    // Tri des anomalies par date
+                    self.malfunctionNotSolvedArray.sort(by: { $0.dateHour.compare($1.dateHour) == .orderedDescending })
+                    self.malfunctionSolvedArray.sort(by: { $0.dateHour.compare($1.dateHour) == .orderedDescending })
+                    
+                    DispatchQueue.main.async {
+                        //Fin du chargement
+                        self.removeSpinner()
                         
-                        DispatchQueue.main.async {
-                            //Fin du chargement
-                            self.removeSpinner()
-                            
-                            self.malfunctionTableView.reloadData()
-                            
-                            // Suppression des Badge du push Notification
-                            UIApplication.shared.applicationIconBadgeNumber = 0
-                        }
+                        self.malfunctionTableView.reloadData()
+                        
+                        // Suppression des Badge du push Notification
+                        UIApplication.shared.applicationIconBadgeNumber = 0
                     }
                 }
             }
