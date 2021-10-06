@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "icon_3000.png",
+      "filename" : "Pictos BienVU-64px-rouge RVB2.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "icon_3000@2x.png",
+      "filename" : "Pictos BienVU-85px-rouge RVB2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "icon_3000@3x.png",
+      "filename" : "Pictos BienVU-128px-rouge RVB2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
