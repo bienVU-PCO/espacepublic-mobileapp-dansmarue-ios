@@ -748,14 +748,14 @@ class RestApiManager: NSObject {
     /// - Parameters:
     ///   - guid: Identifiant du compte parisien
     ///   - onCompletion: Liste des anomalies suivies
-    func getIncidentsByUser(guid: String, isIncidentSolved: Bool, onCompletion: @escaping ([Anomalie]) -> Void) {
+    func getIncidentsByUser(email: String, isIncidentSolved: Bool, onCompletion: @escaping ([Anomalie]) -> Void) {
         let route = Constants.Services.apiBaseUrl + Constants.Services.apiUrl
         
         // R retourne uniquement anomalies Résolus
         // O retourne anomalies ouvertes
         let paramFilterIncidentStatus = isIncidentSolved ? "R" : "O"
         
-        let bodyNoJson = "jsonStream=[{\"request\":\"getIncidentsByUser\", \"guid\":\"\(guid)\", \"filterIncidentStatus\":\"\(paramFilterIncidentStatus)\"}]"
+        let bodyNoJson = "jsonStream=[{\"request\":\"getIncidentsByUser\", \"email\":\"\(email)\", \"filterIncidentStatus\":\"\(paramFilterIncidentStatus)\"}]"
         
         let headerList = [
             "Content-Type": "application/x-www-form-urlencoded",
@@ -889,10 +889,13 @@ class RestApiManager: NSObject {
     ///   - email: email de l'utilisateur
     ///   - password: mot de passe de l'utilisateur
     ///   - onCompletion: True si l'authentification est succès, false sinon
-    func authenticate(email: String, password: String, onCompletion: @escaping (Bool) -> Void) {
-        print("Authentification : Récupération du token")
+    func authenticate(email: String, onCompletion: @escaping (Bool) -> Void) {
+        /*print("Authentification : Récupération du token")
+        self.isMailAgent(email: String) { isMailAgent:Bool in
+            onCompletion(isMailAgent)
+        }*/
         
-        self.getAuthenticateToken(email: email, password: password) {
+       /* self.getAuthenticateToken(email: email) {
             (json:JSON) in
             
             
@@ -943,8 +946,8 @@ class RestApiManager: NSObject {
                 }
             }
             
-        }
-        
+        }*/
+        onCompletion(false)
     }
 
     
@@ -967,6 +970,28 @@ class RestApiManager: NSObject {
             json, err in
             
             onCompletion(json as JSON)
+        })
+    }
+    
+    public func isMailAgent(email: String, onCompletion: @escaping (Bool) -> Void) {
+        let route = Constants.Services.apiBaseUrl + Constants.Services.apiUrl
+        let bodyNoJson = "jsonStream=[{\"request\":\"isMailAgent\";\"email\":\"\(email)\"}]"
+        let headerList = [
+            "Content-Type": "application/x-www-form-urlencoded",
+            ]
+        
+        makeHTTPPostRequest(isJson: false, path: route, body: bodyNoJson, header: headerList, onCompletion: { json, err in
+            var isAgent = false
+            if let jsonArray = json.array {
+                for item in jsonArray {
+                    if let jsonDict = item.dictionary {
+                        if let answer = jsonDict["answer"]?.dictionary {
+                            isAgent = answer["isAgent"]?.int == 1
+                        }
+                    }
+                }
+            }
+            onCompletion(isAgent)
         })
     }
     

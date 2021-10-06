@@ -17,9 +17,6 @@ class CompteParisienViewController: UIViewController, SFSafariViewControllerDele
     
     //MARK: - IBoutlets
     @IBOutlet var mailTextField: UITextField!
-    @IBOutlet var passwordTextField: UITextField!
-    @IBOutlet var forgetPasswordButton: UIButton!
-    @IBOutlet var registerButton: UIButton!
     @IBOutlet var connectionButton: UIButton_PublierAnomalie!
     @IBOutlet var monCompteLabel: UILabel!
     @IBOutlet var backButton: UIButton!
@@ -29,28 +26,20 @@ class CompteParisienViewController: UIViewController, SFSafariViewControllerDele
     //MARK: - IBactions
     @IBAction func connectToCompteParisien(_ sender: Any) {
         let mail = mailTextField.text
-        let password = passwordTextField.text
         UserDefaults.standard.set(mail, forKey: "mail")
 
         
-        RestApiManager.sharedInstance.authenticate(email: mail!, password: password!) {
-            (result: Bool) in
+        RestApiManager.sharedInstance.isMailAgent(email: mail!) {
+            (isAgent: Bool) in
             
             DispatchQueue.main.async {
-                if result {
-                    TTGSnackbar.init(message: Constants.AlertBoxMessage.authenticationOk, duration: .middle).show()
-                    self.backToCompteParisien(self)
-                } else {
-                    let alertController = UIAlertController (title: Constants.AlertBoxTitle.erreur, message: Constants.AlertBoxMessage.erreur, preferredStyle: UIAlertController.Style.alert)
-                    
-                    let okAction = UIAlertAction(title: Constants.AlertBoxTitle.ok, style: UIAlertAction.Style.default) { (_) -> Void in
-                        // nothing
-                    }
-                    
-                    alertController.addAction(okAction)
-                    
-                    self.present(alertController, animated: true, completion: nil)
-                }
+                User.shared.email = mail
+                User.shared.isAgent = isAgent
+                User.shared.isLogged = true
+                UserDefaults.standard.set(mail, forKey: Constants.Key.email)
+                
+                TTGSnackbar.init(message: Constants.AlertBoxMessage.authenticationOk, duration: .middle).show()
+                self.backToCompteParisien(self)
             }
         }
     }
@@ -89,10 +78,8 @@ class CompteParisienViewController: UIViewController, SFSafariViewControllerDele
         super.viewDidLoad()
         
         mailTextField.addTarget(self, action: #selector(self.textFieldDidChange), for: .editingChanged)
-        passwordTextField.addTarget(self, action: #selector(self.textFieldDidChange), for: .editingChanged)
         
         mailTextField.delegate = self
-        passwordTextField.delegate = self
     
         // Initialisation du bouton 
         textFieldDidChange()
@@ -104,13 +91,20 @@ class CompteParisienViewController: UIViewController, SFSafariViewControllerDele
         let bottomBorder = CALayer()
         let bottomBorder2 = CALayer()
         bottomBorder.frame = CGRect(x: 0, y: mailTextField.frame.height - 1.0, width: mailTextField.frame.size.width , height: 6)
-        bottomBorder2.frame = CGRect(x: 0, y: passwordTextField.frame.height - 1.0, width: passwordTextField.frame.width , height: 2)
         bottomBorder.backgroundColor = UIColor.white.cgColor
         bottomBorder2.backgroundColor = UIColor.white.cgColor
         
         self.mailTextField.layer.addSublayer(bottomBorder)
-        self.passwordTextField.layer.addSublayer(bottomBorder2)
         self.mailTextField.text =  UserDefaults.standard.string(forKey: "mail")
+        
+        if ((mailTextField.text!.isValidEmail() == false) || (mailTextField.text?.isEmpty)! ) {
+            connectionButton.isEnabled = false
+            connectionButton.backgroundColor = UIColor.lightGreyDmr()
+        } else {
+            connectionButton.isEnabled = true
+            connectionButton.backgroundColor = UIColor.pinkDmr()
+            
+        }
         
         designUITextField()
         
@@ -121,16 +115,6 @@ class CompteParisienViewController: UIViewController, SFSafariViewControllerDele
         mailTextField.textColor = UIColor.white
         mailTextField.borderStyle = UITextField.BorderStyle.none
         mailTextField.tintColor = UIColor.white
-
-        
-        passwordTextField.attributedPlaceholder = NSAttributedString(string: Constants.PlaceHolder.password, attributes: convertToOptionalNSAttributedStringKeyDictionary([convertFromNSAttributedStringKey(NSAttributedString.Key.foregroundColor): UIColor.white]))
-        passwordTextField.textColor = UIColor.white
-        passwordTextField.borderStyle = UITextField.BorderStyle.none
-        passwordTextField.tintColor = UIColor.white
-        
-        if #available(iOS 12.0, *) {
-            passwordTextField.textContentType = .oneTimeCode
-        }
     }
 
     
@@ -143,7 +127,7 @@ extension CompteParisienViewController : UITextFieldDelegate {
     }
     
     @objc func textFieldDidChange () {
-        if ((mailTextField.text!.isValidEmail() == false) || (mailTextField.text?.isEmpty)! || (passwordTextField.text?.isEmpty)!) {
+        if ((mailTextField.text!.isValidEmail() == false) || (mailTextField.text?.isEmpty)! ) {
             connectionButton.isEnabled = false
             connectionButton.backgroundColor = UIColor.lightGreyDmr()
         } else {
