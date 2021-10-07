@@ -30,8 +30,6 @@ class WelcomeSliderViewController: UIViewController {
         self.welcomeSubtitle.text = welcomeSubtitleText
         
         self.welcomeMainImage.layer.cornerRadius = welcomeMainImage.frame.height/2
-        self.welcomeMainImageBackground.layer.cornerRadius = welcomeMainImageBackground.frame.height/2
-        self.welcomeMainImageBackground.layer.cornerRadius = welcomeMainImageBackground.frame.height/2
         
         //Ajout du l'espacement entre les lignes
         let attributedString = NSMutableAttributedString(string: welcomeSubtitleText)

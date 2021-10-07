@@ -1,23 +1,23 @@
 {
   "images" : [
     {
+      "filename" : "Image de fond-filtre-256x455px.png",
       "idiom" : "universal",
-      "filename" : "BackgroundImage.png",
       "scale" : "1x"
     },
     {
+      "filename" : "Image de fond-filtre-384x682px.png",
       "idiom" : "universal",
-      "filename" : "BackgroundImage@2x.png",
       "scale" : "2x"
     },
     {
+      "filename" : "Image de fond-filtre-512x910px.png",
       "idiom" : "universal",
-      "filename" : "BackgroundImage@3x.png",
       "scale" : "3x"
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }
