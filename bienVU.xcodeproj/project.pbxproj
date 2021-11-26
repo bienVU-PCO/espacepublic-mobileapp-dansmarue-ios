@@ -922,7 +922,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EE39ABBCEA6CF31460F3EA1F /* Pods-bienVU.staging.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_ENTITLEMENTS = bienVU/DansMaRue.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1074,7 +1074,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1F3FE6477F6CCC276F9CC4A9 /* Pods-bienVU.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_ENTITLEMENTS = bienVU/DansMaRue.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1099,13 +1099,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EDFC861527E887435FA9CC5D /* Pods-bienVU.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_ENTITLEMENTS = bienVU/DansMaRue.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = WTEMWM5569;
+				DEVELOPMENT_TEAM = W9PH4PG2T9;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = "$(SRCROOT)/bienVU/SupportingFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1115,7 +1115,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.plainecommune.bienvu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "e143baa2-8a93-4844-8fd3-331e72330f17";
-				PROVISIONING_PROFILE_SPECIFIER = DansMaRue_Dist_v2;
+				PROVISIONING_PROFILE_SPECIFIER = "bienVU Store";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.2;
