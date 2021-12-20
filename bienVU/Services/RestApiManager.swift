@@ -1393,15 +1393,24 @@ class RestApiManager: NSObject {
     /// Méthode permettant de tester si le BO est accessible
     func isDMROnline(onCompletion: @escaping (Bool) -> Void) {
         let route = Constants.Services.apiBaseUrl + "signalement/isDmrOnline"
+                
+        let url = URL(string: route)!
+        var isOnline = false
         
-        self.makeHTTPGetRequest(path: route, header: ["":""], onCompletion: {
-            json, err in
-            var isOnline = false
-            if let jsonDict = json.dictionary {
-                isOnline = ((jsonDict["online"]) != nil)
+        let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
+            guard let data = data else { return }
+            print(String(data: data, encoding: .utf8)!)
+            do {
+                if let convertedJsonIntoDict = try JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary {
+                    isOnline = convertedJsonIntoDict["online"] as! Bool
+               }
+            } catch let error as NSError {
+                print(error.localizedDescription)
             }
-            onCompletion(isOnline as Bool)
-        })
+        }
+
+        task.resume()
+        onCompletion(isOnline)
     }
     
     
