@@ -122,7 +122,7 @@ class MainViewController: UITabBarController {
         let alert = UIAlertController(title: "Nouvelle version disponible", message: alertMessage, preferredStyle: UIAlertController.Style.alert)
         
         let okBtn = UIAlertAction(title: "Oui", style: .default, handler: {(_ action: UIAlertAction) -> Void in
-            if let url = URL(string: "itms-apps://itunes.apple.com/us/app/apple-store/id662045577?mt=8"),
+            if let url = URL(string: "itms-apps://itunes.apple.com/us/app/apple-store/id1580688903?mt=8"),
                 UIApplication.shared.canOpenURL(url){
                 if #available(iOS 10.0, *) {
                     UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
@@ -143,7 +143,7 @@ class MainViewController: UITabBarController {
         let alert = UIAlertController(title: "Nouvelle version disponible", message: alertMessage, preferredStyle: UIAlertController.Style.alert)
         
         let okBtn = UIAlertAction(title: "Mettre à jour", style: .default, handler: {(_ action: UIAlertAction) -> Void in
-            if let url = URL(string: "itms-apps://itunes.apple.com/us/app/apple-store/id662045577?mt=8"),
+            if let url = URL(string: "itms-apps://itunes.apple.com/us/app/apple-store/id1580688903?mt=8"),
                 UIApplication.shared.canOpenURL(url){
                 if #available(iOS 10.0, *) {
                     UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
