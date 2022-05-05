@@ -613,7 +613,7 @@ extension AddAnomalyViewController: UITableViewDataSource {
                 mapView.camera = camera
                 
                 // Utilisation d'une carte simplifiée
-                mapView.mapType = GMSMapViewType.terrain
+                mapView.mapType = GMSMapViewType.satellite
                 
                 // Permet de décaler les donnees Google (Logo, icone, ...)
                 let mapInsets = UIEdgeInsets.init(top: 0.0, left: 0.0, bottom: 30.0, right: 0.0)
