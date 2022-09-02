@@ -20,7 +20,7 @@ class MapsUtils : NSObject {
     static var boroughLabel = ""
     static var postalCode = ""
     static var locality = ""
-    static let villePC = ["L\'Île-Saint-Denis", "Aubervilliers","Épinay-sur-Seine","La Courneuve","Pierrefitte-sur-Seine","Saint-Denis","Saint-Ouen","Villetaneuse","Stains"]
+    static let villePC = ["L\'Île-Saint-Denis", "Aubervilliers","Épinay-sur-Seine","La Courneuve","Pierrefitte-sur-Seine","Saint-Denis","Saint-Ouen","Villetaneuse","Stains","Saint-Ouen-sur-Seine"]
         
     open class func filterToParis(resultsViewController: GMSAutocompleteResultsViewController) {
         
