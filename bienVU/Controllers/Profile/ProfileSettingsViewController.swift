@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import SafariServices
 
-class ProfileSettingsViewController: UIViewController {
+class ProfileSettingsViewController: UIViewController, SFSafariViewControllerDelegate  {
 
     //MARK: - Properties
 
-    let settingsArray = [ "Profil", "Préférences", "Conditions générales d'utilisation", "À Propos"]
+    let settingsArray = [ "Profil", "Préférences", "Conditions générales d'utilisation", "Politique de confidentialité et de vie privée", "À Propos"]
 
     
     //MARK: - IBOutlets
@@ -106,7 +107,7 @@ extension ProfileSettingsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let profileStoryboard = UIStoryboard(name: Constants.StoryBoard.profile, bundle: nil)
         switch indexPath.row {
-        case 0:
+        case Constants.ProfilTableView.profil:
             if (User.shared.isLogged){
                 print("redirection vers page de profil")
                 let profileDetailVC = profileStoryboard.instantiateViewController(withIdentifier: Constants.ViewControllerIdentifier.profileDetail) as! ProfileDetailViewController
@@ -118,19 +119,21 @@ extension ProfileSettingsViewController: UITableViewDelegate {
                 self.navigationController?.present(compteParisienVC, animated: true)
             }
            
-        case 1:
+        case Constants.ProfilTableView.preferences:
            self.authorizationSettings()
-            
-//            let profilePreferencesVC = profileStoryboard.instantiateViewController(withIdentifier: "ProfilePreferencesViewController") as! ProfilePreferencesViewController
-//            self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-//            self.navigationController?.pushViewController(profilePreferencesVC, animated: true)
-            
-        case 2:
-            let profileCGUVC = profileStoryboard.instantiateViewController(withIdentifier: Constants.ViewControllerIdentifier.profileCgu) as! ProfileCGUViewController
-            
-            self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-            self.navigationController?.pushViewController(profileCGUVC, animated: true)
-        case 3:
+        case Constants.ProfilTableView.cgu:
+            if let url = URL(string: Constants.Services.urlCGU) {
+                let vc = SFSafariViewController(url: url, entersReaderIfAvailable: false)
+                vc.delegate = self
+                present(vc, animated: true)
+            }
+        case Constants.ProfilTableView.confidentialite:
+            if let url = URL(string: Constants.Services.urlConfidentialité) {
+                let vc = SFSafariViewController(url: url, entersReaderIfAvailable: false)
+                vc.delegate = self
+                present(vc, animated: true)
+            }
+        case Constants.ProfilTableView.aPropos:
             let profileAboutVC = profileStoryboard.instantiateViewController(withIdentifier: Constants.ViewControllerIdentifier.profileAbout) as! ProfileAboutViewController
             
             self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
