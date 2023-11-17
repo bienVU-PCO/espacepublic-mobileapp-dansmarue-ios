@@ -56,10 +56,10 @@ struct Constants {
                                    prod: "")
         
         static let urlForgetPassword = ""
-               static let urlRegiserCompteParisien = ""
-               
-               static let urlDisplayProfile = ""
-        
+        static let urlRegiserCompteParisien = ""
+        static let urlDisplayProfile = ""
+        static let urlCGU = "https://plainecommune.fr/fileadmin/user_upload/Portail_Plaine_Commune/CGU_BienVu_-_v7.1.pdf"
+        static let urlConfidentialité = "https://plainecommune.fr/outils/mentions-legales-et-donnees/"
     }
     
     struct Maps {
@@ -338,6 +338,14 @@ struct Constants {
         static let carte = "Carte"
         static let monEspace = "Mon espace"
         
+    }
+    
+    enum ProfilTableView {
+        static let profil = 0
+        static let preferences = 1
+        static let cgu = 2
+        static let confidentialite = 3
+        static let aPropos = 4
     }
     
 }
