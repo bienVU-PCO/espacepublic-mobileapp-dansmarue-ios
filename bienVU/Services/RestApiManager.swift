@@ -617,8 +617,9 @@ class RestApiManager: NSObject {
         
         let guid = User.shared.uid ?? ""
         let udid = UIDevice.current.identifierForVendor?.uuidString ?? "-1"
+        let email = User.shared.email!
         
-        let bodyNoJson = "jsonStream=[{\"request\":\"incidentResolved\", \"incidentId\":\"\(anomalie.id)\", \"guid\":\"\(guid)\", \"udid\":\"\(udid)\"}]"
+        let bodyNoJson = "jsonStream=[{\"request\":\"incidentResolved\", \"incidentId\":\"\(anomalie.id)\", \"guid\":\"\(guid)\", \"udid\":\"\(udid)\", \"email\":\"\(email)\"}]"
         
         let headerList = [
             "Content-Type": "application/x-www-form-urlencoded",
