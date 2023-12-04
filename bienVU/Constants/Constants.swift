@@ -58,7 +58,7 @@ struct Constants {
         static let urlForgetPassword = ""
         static let urlRegiserCompteParisien = ""
         static let urlDisplayProfile = ""
-        static let urlCGU = "https://plainecommune.fr/fileadmin/user_upload/Portail_Plaine_Commune/CGU_BienVu_-_v7.1.pdf"
+        static let urlCGU = "https://plainecommune.fr/conditions-generales-utilisation-applications-et-formulaire/"
         static let urlConfidentialité = "https://plainecommune.fr/outils/mentions-legales-et-donnees/"
     }
     
