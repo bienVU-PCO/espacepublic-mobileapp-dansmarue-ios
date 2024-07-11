@@ -1436,12 +1436,18 @@ class RestApiManager: NSObject {
     
     // MARK: Perform a GET Request
     private func makeHTTPGetRequest(path: String, header: [String: String], onCompletion: @escaping ServiceResponse) {
-        let request = NSMutableURLRequest(url: NSURL(string: path)! as URL)
-        for header in header {
-            request.addValue(header.value, forHTTPHeaderField: header.key)
+        guard let url = URL(string: path) else {
+            onCompletion(JSON.null, nil)
+            return
         }
         
+        var request = URLRequest(url: url)
+        for header in header {
+            if (header.value.isEmpty) { continue }
+            request.addValue(header.value, forHTTPHeaderField: header.key)
+        }
         let session = URLSession(configuration: URLSessionConfiguration.default, delegate: self, delegateQueue: OperationQueue.main)
+        
         if Reach().connectionStatus() {
             let task = session.dataTask(with: request as URLRequest, completionHandler: {data, response, error -> Void in
                 if let jsonData = data {
@@ -1459,8 +1465,14 @@ class RestApiManager: NSObject {
     
     // MARK: Perform a POST Request
     private func makeHTTPPostRequest(isJson: Bool, path: String, body: Any, header: [String: String], onCompletion: @escaping ServiceResponse) {
-        var request = URLRequest(url: NSURL(string: path)! as URL)
+        guard let url = URL(string: path) else {
+            onCompletion(JSON.null, nil)
+            return
+        }
+        
+        var request = URLRequest(url: url)
         for header in header {
+            if (header.value.isEmpty) { continue }
             request.addValue(header.value, forHTTPHeaderField: header.key)
         }
         // Set the method to POST
@@ -1510,8 +1522,14 @@ class RestApiManager: NSObject {
     
     // MARK: Perform a PUT Request
     private func makeHTTPPutRequest(isJson: Bool, path: String, body: Any, header: [String: String], onCompletion: @escaping ServiceResponse) {
-        let request = NSMutableURLRequest(url: NSURL(string: path)! as URL)
+        guard let url = URL(string: path) else {
+            onCompletion(JSON.null, nil)
+            return
+        }
+        
+        var request = URLRequest(url: url)
         for header in header {
+            if (header.value.isEmpty) { continue }
             request.addValue(header.value, forHTTPHeaderField: header.key)
         }
         // Set the method to POST
@@ -1549,8 +1567,13 @@ class RestApiManager: NSObject {
     }
     // MARK: Perform a Delete Request
     private func makeHTTPDeleteRequest(path: String,header: [String: String], onCompletion: @escaping (_ result: Int)->()){
-        let request = NSMutableURLRequest(url: NSURL(string: path)! as URL)
+        guard let url = URL(string: path) else {
+            onCompletion(500)
+            return
+        }
+        var request = URLRequest(url: url)
         for header in header {
+            if (header.value.isEmpty) { continue }
             request.addValue(header.value, forHTTPHeaderField: header.key)
         }
         // Set the method to POST
