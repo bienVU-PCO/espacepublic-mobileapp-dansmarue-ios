@@ -32,10 +32,8 @@ class MapsUtils : NSObject {
         let bounds = GMSCoordinateBounds(coordinate: neBoundsCorner,
                                          coordinate: swBoundsCorner)
         
-        resultsViewController.autocompleteBounds = bounds
-        
         // Specify the place data types to return.
-        let fields: GMSPlaceField = GMSPlaceField(rawValue: UInt(GMSPlaceField.name.rawValue) | UInt(GMSPlaceField.placeID.rawValue) | UInt(GMSPlaceField.formattedAddress.rawValue) | UInt(GMSPlaceField.addressComponents.rawValue) | UInt(GMSPlaceField.coordinate.rawValue) )!
+        let fields: GMSPlaceField = GMSPlaceField(rawValue: UInt(GMSPlaceField.name.rawValue) | UInt(GMSPlaceField.placeID.rawValue) | UInt(GMSPlaceField.formattedAddress.rawValue) | UInt(GMSPlaceField.addressComponents.rawValue) | UInt(GMSPlaceField.coordinate.rawValue))
         resultsViewController.placeFields = fields
         
         // Set up the autocomplete filter.
@@ -44,7 +42,6 @@ class MapsUtils : NSObject {
         filter.country = "FR"
         
         resultsViewController.autocompleteFilter = filter
-
     }
     
     

@@ -10,7 +10,6 @@ import UIKit
 import GoogleMaps
 import GooglePlaces
 import SwiftyJSON
-import Mapbox
 
 class MapViewController: UIViewController {
     
@@ -79,12 +78,6 @@ class MapViewController: UIViewController {
                 }
             }
         }
-        
-        let url = URL(string: "mapbox://styles/mapbox/streets-v11")
-        let mapView = MGLMapView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), styleURL: url)
-        mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        mapView.setCenter(CLLocationCoordinate2D(latitude: 59.31, longitude: 18.06), zoomLevel: 9, animated: false)
-        view.addSubview(mapView)
     }
     
 
