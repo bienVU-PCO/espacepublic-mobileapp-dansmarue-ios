@@ -653,6 +653,7 @@ extension MapViewController: GMSMapViewDelegate {
         self.bottomSheetVC?.selectAnomalie = nil
         self.bottomSheetVC?.selectEquipement = nil
         self.bottomSheetVC?.animateBottomSheet(withDuration: 0, status: (self.bottomSheetVC?.currentStatus)!)
+        retrieve(currentLocation: coordinate, addMarker: true) { (result: Bool) in }
     }
     
     func mapView(_ mapView: GMSMapView, didLongPressAt coordinate: CLLocationCoordinate2D) {
