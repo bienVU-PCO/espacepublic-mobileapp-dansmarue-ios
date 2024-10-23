@@ -72,10 +72,9 @@ class RestApiManager: NSObject {
                                     
                                     anomalie.source = AnomalieSource(rawValue: marker["source"].stringValue) ?? .dmr
                                     
-                             
-                                    anomalies.append(anomalie)
-                                    
-                                    
+                                    if(anomalie.anomalieStatus != AnomalieStatus.Resolu) {
+                                        anomalies.append(anomalie)
+                                    }
                                 }
                                 
                                 onCompletion(anomalies)

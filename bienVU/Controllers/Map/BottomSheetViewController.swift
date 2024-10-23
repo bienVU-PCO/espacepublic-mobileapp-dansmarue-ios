@@ -29,6 +29,7 @@ class BottomSheetViewController: UIViewController, UITextFieldDelegate {
     var mapsUtils : MapsUtils?
     var selectedAddress: GMSAddress?
     var selectedCoordinates : CLLocationCoordinate2D?
+    var showAnomalyWidth: CGFloat = 0
     
     var otherCellDisplay:Bool = false
     var buttomSheetFullView:Bool = false
@@ -56,6 +57,8 @@ class BottomSheetViewController: UIViewController, UITextFieldDelegate {
     var congratulateAnomalyBtn: UIButton?
     var addFavoriteBtn: UIButton?
     var removeFavoriteBtn: UIButton?
+    var showAnomalyBtn: UIButton?
+    var swipeImageView: UIImageView?
     
     let imgAddAnomaly = UIImage(named: Constants.Image.createAnomalie)
     let imgAddAnomalySelected = UIImage(named: Constants.Image.createAnomalieSelected)
@@ -70,6 +73,14 @@ class BottomSheetViewController: UIViewController, UITextFieldDelegate {
     let imgCongratulateAnomalyDisabled = UIImage(named:  Constants.Image.congratulateDisabled)
     let imgAddAddressFavorite = UIImage(named: Constants.Image.favoritePlus)
     let imgRemoveddressFavorite = UIImage(named: Constants.Image.favoriteCheck)
+    
+    var initFrameHeight: CGFloat = 0.0
+    var buttonHeight: CGFloat = 40
+    
+    var showAnomalyInitialX: CGFloat = 0
+    var showAnomalyInitialY: CGFloat = 0
+    var showAnomalyInitialHeight: CGFloat = 0
+    var showAnomalyInitialWidth: CGFloat = 0
 
     var otherMalfunctionsArray = [Anomalie]()
     var currentStatus: BottomSheetStatus = .none
@@ -119,6 +130,13 @@ class BottomSheetViewController: UIViewController, UITextFieldDelegate {
             searchAnomalyBtn?.accessibilityLabel = Constants.LabelMessage.searchAnomaly
             
             self.view.addSubview(searchAnomalyBtn!)
+        }
+        
+        if swipeImageView == nil {
+            swipeImageView = initIconButton()
+            let singleTap = UITapGestureRecognizer(target: self, action: #selector(displayBottomSheet(sender:)))
+            swipeImageView?.addGestureRecognizer(singleTap)
+            view.addSubview(swipeImageView!)
         }
         
         if addFavoriteBtn == nil {
@@ -175,6 +193,99 @@ class BottomSheetViewController: UIViewController, UITextFieldDelegate {
             congratulateAnomalyBtn?.accessibilityLabel = Constants.LabelMessage.congratulateAnomaly
             
             self.view.addSubview(congratulateAnomalyBtn!)
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if showAnomalyBtn == nil {
+            showAnomalyBtn = initShowButton()
+            showAnomalyBtn?.tag = 55
+            showAnomalyBtn?.addTarget(self, action: #selector(displayBottomSheet(sender:)), for: .touchUpInside)
+            showAnomalyBtn?.accessibilityLabel = Constants.LabelMessage.showAnomaly
+            showAnomalyBtn?.setTitle(Constants.LabelMessage.showAnomaly, for: .normal)
+            showAnomalyBtn?.tintColor = .white
+            showAnomalyBtn?.backgroundColor = UIColor.pinkButtonDmr()
+            showAnomalyBtn?.accessibilityTraits = .button
+            applyDynamicType(label: (showAnomalyBtn?.titleLabel!)!, fontName: "Montserrat-Regular", size: 12)
+            showAnomalyBtn?.sizeToFit()
+            updateShowButtonFrame()
+            view.addSubview(showAnomalyBtn!)
+        }
+        
+        if swipeImageView == nil {
+            swipeImageView = initIconButton()
+            let singleTap = UITapGestureRecognizer(target: self, action: #selector(displayBottomSheet(sender:)))
+            swipeImageView?.addGestureRecognizer(singleTap)
+            view.addSubview(swipeImageView!)
+        }
+    }
+    
+    private func applyDynamicType(label: UILabel, fontName: String, size: Float) {
+        label.adjustsFontForContentSizeCategory = true
+        label.font = UIFont.init(name: fontName, size: CGFloat(size))
+    }
+    
+    func initIconButton() -> UIImageView {
+        let imageName = "arrow_swipe"
+        let image = UIImage(named: imageName)
+        let imageView = UIImageView(image: image!)
+        imageView.frame = CGRect(x: showAnomalyInitialX + showAnomalyInitialWidth / 2 - 10, y: -buttonHeight - 5, width: 20, height: 20)
+        imageView.isUserInteractionEnabled = true
+        return imageView
+    }
+    
+    func isLargerTextEnabled() -> Bool {
+        let contentSize = UIApplication.shared.preferredContentSizeCategory
+        let accessibilitySizeEnabled = contentSize.isAccessibilityCategory
+        return accessibilitySizeEnabled
+    }
+    
+    func initShowButton() -> UIButton {
+        let btnWidth = view.frame.width / 2
+        let button = UIButton(frame: CGRect(x: view.frame.width / 2 - btnWidth / 2, y: -40, width: btnWidth, height: 40))
+
+        button.isUserInteractionEnabled = true
+        button.layer.cornerRadius = buttonHeight / 2
+        button.titleLabel?.numberOfLines = 0
+        button.titleLabel?.textAlignment = .center
+         
+        return button
+    }
+    
+    func updateShowButtonFrame() {
+        let initialButtonWidth: CGFloat = view.frame.width / 2
+        let otherButtonWidths: CGFloat = 82
+        let frameWidth = view.frame.width
+        if showAnomalyBtn!.frame.width > initialButtonWidth {
+            let isOverflow = showAnomalyBtn!.frame.width >= frameWidth - (otherButtonWidths + 16)
+            var btnWidth: CGFloat = 0
+            if isLargerTextEnabled() {
+                btnWidth = isOverflow ? min(showAnomalyBtn!.frame.width, frameWidth - otherButtonWidths) : (frameWidth - 2 * (otherButtonWidths + 16))
+            } else {
+                btnWidth = initialButtonWidth
+            }
+            
+            buttonHeight = showAnomalyBtn!.frame.height < showAnomalyBtn!.titleLabel!.frame.height ? 80 : 40
+            
+            showAnomalyInitialX = CGFloat(isLargerTextEnabled() ? 16 : view.frame.width / 2 - btnWidth / 2)
+            showAnomalyInitialY = CGFloat(-buttonHeight + 20)
+            showAnomalyInitialWidth = CGFloat(btnWidth)
+            showAnomalyInitialHeight = CGFloat(buttonHeight)
+            
+            showAnomalyBtn?.frame = CGRect(
+                origin: CGPoint(
+                    x: showAnomalyInitialX,
+                    y: showAnomalyInitialY),
+                size: CGSize(width: showAnomalyInitialWidth, height: showAnomalyInitialHeight))
+        } else {
+            buttonHeight = showAnomalyBtn!.frame.height < showAnomalyBtn!.titleLabel!.frame.height ? 80 : 40
+            showAnomalyInitialX = CGFloat(view.frame.width / 2 - initialButtonWidth / 2)
+            showAnomalyInitialY = CGFloat(-20)
+            showAnomalyInitialWidth = CGFloat(isLargerTextEnabled() ? (frameWidth - otherButtonWidths) : initialButtonWidth)
+            showAnomalyInitialHeight = CGFloat(buttonHeight)
+            showAnomalyBtn?.frame = CGRect(x: showAnomalyInitialX, y: showAnomalyInitialY, width: showAnomalyInitialWidth,
+                                           height: showAnomalyInitialHeight)
         }
     }
    
@@ -428,6 +539,10 @@ class BottomSheetViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    @objc func displayBottomSheet(sender: UIButton) {
+        animateBottomSheet(withDuration: 1, status: .full)
+    }
+    
     /// Animation de l'affichage de la BottomSheet en fonction du status
     ///
     /// - Parameters:
@@ -439,6 +554,7 @@ class BottomSheetViewController: UIViewController, UITextFieldDelegate {
             currentStatus = .selected
             otherCellDisplay = true
             buttomSheetFullView = false
+            swipeImageView?.isHidden = true
             
             if let anomalie = selectAnomalie {
                 // Cas d'une anomalie outdoor
@@ -446,6 +562,7 @@ class BottomSheetViewController: UIViewController, UITextFieldDelegate {
                     followAnomalyBtn?.isHidden = true
                     unfollowAnomalyBtn?.isHidden = true
                     congratulateAnomalyBtn?.isHidden = false
+                    showAnomalyBtn?.isHidden = true
                     
                 } else {
                     //followAnomalyBtn?.isHidden = anomalie.isIncidentFollowedByUser
@@ -478,6 +595,8 @@ class BottomSheetViewController: UIViewController, UITextFieldDelegate {
             currentStatus = .full
             otherCellDisplay = true
             buttomSheetFullView = true
+            showAnomalyBtn?.isHidden = true
+            swipeImageView?.isHidden = true
             
             // En mode full, on cache le uberPin mais on conserve son status pour le remettre en sortie du mode full
             let saveUberStatus = uberDisplayed
@@ -505,6 +624,8 @@ class BottomSheetViewController: UIViewController, UITextFieldDelegate {
             otherCellDisplay = false
             buttomSheetFullView = false
             selectAnomalie = nil
+            showAnomalyBtn?.isHidden = false
+            swipeImageView?.isHidden = false
             //selectEquipement = nil
 
             addAnomalyBtn?.isHidden = false

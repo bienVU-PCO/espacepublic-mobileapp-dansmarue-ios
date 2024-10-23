@@ -218,6 +218,7 @@ struct Constants {
         
         static let addAnomaly = "Ajouter une autre anomalie"
         static let searchAnomaly = "Rechercher"
+        static let showAnomaly = "Voir les anomalies déjà signalées"
         static let preciserPosition = "Préciser la position de l'anomalie"
         static let otherAnomalieLabel = "Autres anomalies autour de moi"
         static let otherAnomalieEquipementLabel = "Autres anomalies dans l'équipement"
