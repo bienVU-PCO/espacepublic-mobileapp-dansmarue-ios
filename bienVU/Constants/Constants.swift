@@ -236,7 +236,7 @@ struct Constants {
         static let about = "À Propos"
         static let aboutText = "L'application DansMaRue PARIS est un service de la Ville de Paris qui fonctionne uniquement à Paris. Elle utilise certaines fonctionnalités de votre smartphone (GPS et connexion 3G/4G) qui nécessitent une bonne connexion. Si vous rencontrez des difficultés techniques liées à l'usage de l'application, n'hésitez pas à nous en informer via l'adresse mail DansMaRue_App@paris.fr\n\nLes informations ne sont pas traitées de manière instantanée. Les situations présentant un caractère dangereux et nécessitant la mise en oeuvre de mesures de protection rapides doivent continuer à faire l'objet d'une déclaration auprès des services d'urgence."
         static let voirProfile = "Voir mon profil complet"
-        static let type = "Type"
+        static let type = "Type (obligatoire)"
         static let select = "Sélectionner"
         static let photo = "Photo (obligatoire)"
         static let ajouter = "Ajouter"
