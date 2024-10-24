@@ -294,7 +294,7 @@ struct Constants {
         static let password = "Mot de passe"
         static let mail = "Mail"
         static let email = "Email"
-      
+        static let searchType = "Chercher un type"
     }
     
     struct StoryBoard {
@@ -347,6 +347,18 @@ struct Constants {
         static let cgu = 2
         static let confidentialite = 3
         static let aPropos = 4
+    }
+    
+    enum AccessibilityLabel {
+        static let favoriteAdressButton = "Vos adresses favorites"
+        static let favoriteTypesButton = "Vos types favorites"
+        static let backButton = "Retour"
+        static let editAddress = "Modifier l'adresse"
+        static let typeTitle = "Type"
+    }
+    
+    enum AccessibilityHint {
+        static let searchBarTypeHint = "Saisissez le type de l'anomalie, champ à autocomplétion activable à partir de la saisie de trois caractères"
     }
     
 }

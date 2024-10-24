@@ -62,6 +62,73 @@ final class ReferalManager {
         }
     }
     
+    /// Recherche d'un type d'anomalie,
+    func getAnomalieThatContainsText(type: String) -> [TypeAnomalie]? {
+        var typeThatContainsText : [TypeAnomalie] = []
+        let isAgent = User.shared.isAgent
+        
+        for typeAnomalie in typeAnomalies {
+            if (typeAnomalie.value.name.uppercased().folding(options: .diacriticInsensitive, locale: .current).range(of: type.uppercased().folding(options: .diacriticInsensitive, locale: .current)) != nil) {
+                if ( !typeAnomalie.value.isAgent || (typeAnomalie.value.isAgent && (isAgent != nil && isAgent!) ) )
+                {
+                    var fullName = typeAnomalie.value.name
+                    var typeAnoTemp:TypeAnomalie = typeAnomalie.value.copy() as! TypeAnomalie
+                   
+                    //Récupération du nom complet des niveaux précédents
+                    while !typeAnoTemp.isRootCategorie {
+                        fullName = typeAnomalies[typeAnoTemp.parentId]!.name + " > " + fullName
+                        typeAnoTemp = typeAnomalies[typeAnoTemp.parentId]!.copy() as! TypeAnomalie
+                    }
+                    
+                    if ( !typeAnoTemp.isAgent || (typeAnoTemp.isAgent && (isAgent != nil && isAgent!) ) ) {
+                        //Reset typeAnoTemp au niveau de la recherche
+                        typeAnoTemp = typeAnomalie.value.copy() as! TypeAnomalie
+                        typeAnoTemp.name = fullName
+                        
+                        if typeAnomalie.value.childrensId.count > 0 {
+                            //Récupération des enfants
+                            var typeAnoTempChild:TypeAnomalie
+                            for typeAnomalieChildId in typeAnomalie.value.childrensId
+                            {
+                                if typeAnomalies[typeAnomalieChildId] != nil
+                                {
+                                    typeAnoTempChild = typeAnomalies[typeAnomalieChildId]!.copy() as! TypeAnomalie
+                                    
+                                    // Enfant niveau 2
+                                    if typeAnoTempChild.childrensId.count > 0
+                                    {
+                                        for typeAnomalieChildLastLevelId in typeAnoTempChild.childrensId
+                                        {
+                                            if typeAnomalies[typeAnomalieChildLastLevelId] != nil
+                                            {
+                                                let typeAnomalieChildLastLevel:TypeAnomalie = typeAnomalies[typeAnomalieChildLastLevelId]!.copy() as! TypeAnomalie
+                                                typeAnomalieChildLastLevel.name = typeAnoTemp.name + " > " +  typeAnoTempChild.name + " > " + typeAnomalieChildLastLevel.name
+                                                if !typeThatContainsText.contains(typeAnomalieChildLastLevel) && !typeAnomalieChildLastLevel.isAgent || (typeAnomalieChildLastLevel.isAgent && (isAgent != nil && isAgent!) ) {                               typeThatContainsText.append(typeAnomalieChildLastLevel)
+                                                }
+                                            }
+                                        }
+                                    }
+                                    // Enfant niveau 1
+                                    else {
+                                        typeAnoTempChild.name = typeAnoTemp.name + " > " + typeAnoTempChild.name
+                                        if !typeThatContainsText.contains(typeAnoTempChild) && !typeAnoTempChild.isAgent || (typeAnoTempChild.isAgent && (isAgent != nil && isAgent!))  {
+                                            typeThatContainsText.append(typeAnoTempChild)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        else if !typeThatContainsText.contains(typeAnoTemp) {
+                            typeThatContainsText.append(typeAnoTemp)
+                        }
+                    }
+                }
+            }
+        }
+        
+        return typeThatContainsText
+    }
+    
     /// Chargement de la liste des types de categorie d'anomalie pour les equipements.
     func loadTypeAnomalieByEquipement() {
         let json = retrieveFromJsonFile(withName: FileName.CATEGORIE_EQUIPEMENT)

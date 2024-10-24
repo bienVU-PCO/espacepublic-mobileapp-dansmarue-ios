@@ -15,16 +15,19 @@ class TypeAnomalieViewController: UIViewController {
     var types = [TypeAnomalie]()
     var typeAnomalie = TypeAnomalie()
     weak var delegate: AddAnomalyViewController!
+    var searching: Bool? = false
+    var typesSearch = [TypeAnomalie]()
     
     //MARK: IBOutlet
     @IBOutlet weak var tableView: UITableView!
-    
-   
+    @IBOutlet weak var titleFloatingLabel: UILabel!
+    @IBOutlet weak var searchTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.tableFooterView = UIView()
+        view.backgroundColor = UIColor.black
 
         self.navigationItem.title = Constants.LabelMessage.type
         //self.navigationItem.backBarButtonItem?.title = ""
@@ -32,8 +35,37 @@ class TypeAnomalieViewController: UIViewController {
         if let image = UIImage(named: Constants.Image.iconBack) {
             navigationItem.leftBarButtonItem?.image = image
         }
+        
+        titleFloatingLabel.adjustsFontForContentSizeCategory = true
+        titleFloatingLabel.accessibilityTraits = .staticText
+        titleFloatingLabel.font = UIFont.init(name: "Montserrat-Regular", size: 12)!
+        titleFloatingLabel.text = Constants.PlaceHolder.searchType
+        titleFloatingLabel.isHidden = true
+        navigationItem.title = Constants.AccessibilityLabel.typeTitle
+        navigationItem.isAccessibilityElement = true
+        navigationItem.titleView?.isAccessibilityElement = true
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: nil, style: .plain, target: self, action: #selector(backAction))
+        navigationItem.leftBarButtonItem?.accessibilityTraits = .button
+        navigationItem.leftBarButtonItem?.accessibilityLabel = Constants.AccessibilityLabel.backButton
+        if let image = UIImage(named: Constants.Image.iconBack) {
+            navigationItem.leftBarButtonItem?.image = image
+        }
 
         loadRootTypes()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        UIAccessibility.post(notification: UIAccessibility.Notification.screenChanged, argument: navigationItem.titleView)
+        searchTextField.isAccessibilityElement = true
+        searchTextField.delegate = self
+        searchTextField.addTarget(self, action: #selector(textFieldDidChange(_:)),
+                                  for: .editingChanged)
+        
+        searchTextField.placeholder = Constants.PlaceHolder.searchType
+        searchTextField.accessibilityLabel = Constants.PlaceHolder.searchType
+        searchTextField.accessibilityTraits = .searchField
+        searchTextField.accessibilityHint = Constants.AccessibilityHint.searchBarTypeHint
+        searchTextField.clearButtonMode = .whileEditing
     }
     
     @IBAction func openFavorites(_ sender: Any) {
@@ -107,6 +139,24 @@ class TypeAnomalieViewController: UIViewController {
         }
     }
     
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        guard let text = textField.text else { return }
+        if text.count >= 3 {
+            searching = true
+            
+            typesSearch.removeAll()
+            
+            let typesSelected = ReferalManager.shared.getAnomalieThatContainsText(type: text)
+            if typesSelected != nil {
+                typesSearch = typesSelected!
+            }
+            tableView.reloadData()
+        } else {
+            searching = false
+            tableView.reloadData()
+        }
+    }
+    
     func changeTypeAnomalie(newType:TypeAnomalie) {
         delegate.changeTypeAnomalie(newType: newType)
         _ = navigationController?.popViewController(animated: true)
@@ -115,7 +165,11 @@ class TypeAnomalieViewController: UIViewController {
 
 extension TypeAnomalieViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {        
-        typeAnomalie = types[indexPath.row]
+        if searching! {
+            typeAnomalie = typesSearch[indexPath.row]
+        } else {
+            typeAnomalie = types[indexPath.row]
+        }
         
         if typeAnomalie.childrensId.isEmpty {
             //Si type d'ano avec message
@@ -162,7 +216,11 @@ extension TypeAnomalieViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return types.count
+        if !searching! {
+            return types.count
+        } else {
+            return typesSearch.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -172,43 +230,53 @@ extension TypeAnomalieViewController: UITableViewDataSource {
             fatalError("The dequeued cell is not an instance of TypeTableViewCell.")
         }
         
-        let typeAnomalie = types[indexPath.row]
-        
-        cell.typeLabel.text = typeAnomalie.name
-        cell.typeLabel.lineBreakMode = .byWordWrapping
-        cell.typeLabel.numberOfLines = 0
-        
-        cell.typeImage.image = typeAnomalie.image
-        
-        //Gestion des favoris si on est sur le dernier niveau d'ano
-        if typeAnomalie.childrensId.isEmpty {
-            //Check si le type est enregistré en favoris
-            var favorite : [String] = []
-            let defaults = UserDefaults.standard
-          
-            // Tap gesture
-            let recognizer = MyTapGesture(target: self, action: #selector(TypeAnomalieViewController.addOrRemoveFavorite(recognizer:)))
-            recognizer.categorieId = typeAnomalie.categorieId
+        if !searching! {
+            let typeAnomalie = types[indexPath.row]
             
-            if let favoritesArray = defaults.stringArray(forKey: "favoritesArray") {
-                favorite = favoritesArray
-            }
+            cell.typeLabel.text = typeAnomalie.name
+            cell.typeLabel.lineBreakMode = .byWordWrapping
+            cell.typeLabel.numberOfLines = 0
             
-            //Le type est déjà dans les favoris -> suppression
-            if (favorite.contains(typeAnomalie.categorieId)) {
-                cell.typeFavorite.image = UIImage(named:Constants.Image.favoriteCheck)
-                recognizer.addFavorite = false
+            cell.typeImage.image = typeAnomalie.image
+            
+            //Gestion des favoris si on est sur le dernier niveau d'ano
+            if typeAnomalie.childrensId.isEmpty {
+                //Check si le type est enregistré en favoris
+                var favorite : [String] = []
+                let defaults = UserDefaults.standard
+                
+                // Tap gesture
+                let recognizer = MyTapGesture(target: self, action: #selector(TypeAnomalieViewController.addOrRemoveFavorite(recognizer:)))
+                recognizer.categorieId = typeAnomalie.categorieId
+                
+                if let favoritesArray = defaults.stringArray(forKey: "favoritesArray") {
+                    favorite = favoritesArray
+                }
+                
+                //Le type est déjà dans les favoris -> suppression
+                if (favorite.contains(typeAnomalie.categorieId)) {
+                    cell.typeFavorite.image = UIImage(named:Constants.Image.favoriteCheck)
+                    recognizer.addFavorite = false
+                } else {
+                    //Ajout au favoris
+                    cell.typeFavorite.image = UIImage(named:Constants.Image.favoriteUncheck)
+                    recognizer.addFavorite = true
+                }
+                // Add tap gesture recognizer to favorite image
+                cell.typeFavorite.addGestureRecognizer(recognizer)
             } else {
-                //Ajout au favoris
-                cell.typeFavorite.image = UIImage(named:Constants.Image.favoriteUncheck)
-                recognizer.addFavorite = true
+                cell.typeFavorite.image = nil
             }
-            // Add tap gesture recognizer to favorite image
-            cell.typeFavorite.addGestureRecognizer(recognizer)
         } else {
+            let typeAnomalie = typesSearch[indexPath.row]
+            cell.typeLabel.text = typeAnomalie.name
+            cell.typeLabel.accessibilityLabel = typeAnomalie.name
+            cell.typeLabel.lineBreakMode = .byWordWrapping
+            cell.typeLabel.numberOfLines = 0
             cell.typeFavorite.image = nil
+            cell.typeImage.image = nil
+            cell.typeFavorite.isAccessibilityElement = false
         }
-        
         return cell
     }
     
@@ -240,4 +308,19 @@ extension TypeAnomalieViewController: UITableViewDataSource {
         var addFavorite = Bool()
     }
     
+}
+
+extension TypeAnomalieViewController: UITextFieldDelegate {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        UIView.animate(withDuration: 0.25, animations: { () in
+            self.titleFloatingLabel.isHidden = false
+        })
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        UIView.animate(withDuration: 0.25, animations: { () in
+            self.titleFloatingLabel.isHidden = true
+        })
+    }
 }
